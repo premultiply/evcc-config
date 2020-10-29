@@ -17,8 +17,10 @@ Configuration examples for the [EVCC EV Charge Controller](https://github.com/an
 - [Modbus (Ethernet)](#meter-modbus-ethernet)
 - [Modbus (RTU)](#meter-modbus-rtu)
 - [Multiple Grid Inverters combined (PV Meter)](#meter-multiple-grid-inverters-combined-pv-meter)
-- [SMA Home Manager 2.0 / SMA Energy Meter 30](#meter-sma-home-manager-2-0--sma-energy-meter-30)
+- [SMA Sunny Home Manager 2.0 / SMA Energy Meter](#meter-sma-sunny-home-manager)
+- [SMA Sunny Boy / Tripower / other SunSpec PV-inverters](#meter-sma-sunny-sunspec)
 - [SMA Sunny Island](#meter-sma-sunny-island)
+- [SMA Sunny Boy Storage](#meter-sma-sunny-boy-storage)
 - [Solarlog (Grid Meter)](#meter-solarlog-grid-meter)
 - [Solarlog (PV Meter)](#meter-solarlog-pv-meter)
 - [Sonnenbatterie Eco (Battery meter/ HTTP)](#meter-sonnenbatterie-eco-battery-meter-http)
@@ -232,12 +234,23 @@ Configuration examples for the [EVCC EV Charge Controller](https://github.com/an
       id: 71 # Configured Modbus Device ID 
 ```
 
-<a id="meter-sma-home-manager-2-0--sma-energy-meter-30"></a>
-#### SMA Home Manager 2.0 / SMA Energy Meter 30
+<a id="meter-sma-sunny-home-manager"></a>
+#### SMA Sunny Home Manager 2.0 / SMA Energy Meter
 
 ```yaml
 - type: sma
   serial: 1234567890 # Serial number of the device
+```
+
+<a id="meter-sma-sunny-sunspec"></a>
+#### SMA Sunny Boy / Tripower / other SunSpec PV-inverters
+
+```yaml
+- type: modbus
+  value: Power
+  model: sunspec
+  uri: 192.168.178.91:502 # IP address, configured port (default is 502)
+  id: 126 # Configured Modbus Device ID ("Gerät")
 ```
 
 <a id="meter-sma-sunny-island"></a>
@@ -250,6 +263,19 @@ Configuration examples for the [EVCC EV Charge Controller](https://github.com/an
   id: 126
   power: Power # default values, optionally override
   energy: Sum # default values, optionally override
+```
+
+<a id="meter-sma-sunny-boy-storage"></a>
+#### SMA Sunny Boy Storage
+
+```yaml
+- type: modbus
+  uri: 192.168.1.3:502
+  model: sunspec
+  id: 126
+  power: Power
+  energy: Sum
+  soc: ChargeState
 ```
 
 <a id="meter-solarlog-grid-meter"></a>
