@@ -163,7 +163,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: modbus
   model: sdm
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   rtu: true # serial modbus rtu (rs485) device connected using simple ethernet adapter
   id: 2
   energy: Sum # this assignment is only required for charge meter usage
@@ -212,19 +212,19 @@ If you want to contribute configurations to this repository please open a Pull R
     add:
     - type: modbus
       model: sunspec
-      uri: 192.168.178.100:502
+      uri: 192.0.2.2:502
       id: 1
       value: 160:3:DCW # mppt 3 charge
       scale: -1
     - type: modbus
       model: sunspec
-      uri: 192.168.178.100:502
+      uri: 192.0.2.2:502
       id: 1
       value: 160:4:DCW # mppt 4 discharge
   soc:
     type: modbus
     model: sunspec
-    uri: 192.168.178.100:502
+    uri: 192.0.2.2:502
     id: 1
     value: ChargeState
 ```
@@ -235,7 +235,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: modbus
   model: 213 # sunspec meter
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 200
 ```
 
@@ -249,12 +249,12 @@ If you want to contribute configurations to this repository please open a Pull R
     add:
     - type: modbus
       model: sunspec
-      uri: 192.168.178.100:502
+      uri: 192.0.2.2:502
       id: 1
       value: 160:1:DCW # mpp 1 pv
     - type: modbus
       model: sunspec
-      uri: 192.168.178.100:502
+      uri: 192.0.2.2:502
       id: 1
       value: 160:2:DCW # mpp 2 pv
 ```
@@ -265,7 +265,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: modbus
   model: 203 # sunspec meter
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 1
 ```
 
@@ -274,7 +274,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 1
   soc: ChargeState
 ```
@@ -284,7 +284,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 126
 ```
 
@@ -317,7 +317,7 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: default
   power:
     type: modbus # use ModBus plugin
-    uri: 192.168.178.100:1502 # inverter port
+    uri: 192.0.2.2:1502 # inverter port
     id: 71
     register: # manual non-sunspec register configuration
       address: 252 # (see ba_kostal_interface_modbus-tcp_sunspec.pdf)
@@ -330,7 +330,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  uri: 192.168.178.100:1502
+  uri: 192.0.2.2:1502
   id: 71
 ```
 
@@ -339,7 +339,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 71
 ```
 
@@ -354,12 +354,12 @@ If you want to contribute configurations to this repository please open a Pull R
     - type: modbus
       model: sunspec
       value: 160:1:DCW # SunSpec Model 160 MPP string 1 DCW
-      uri: 192.168.178.100:502
+      uri: 192.0.2.2:502
       id: 1
     - type: modbus
       model: sunspec
       value: 160:2:DCW # SunSpec Model 160 MPP string 2 DCW
-      uri: 192.168.178.100:502
+      uri: 192.0.2.2:502
       id: 1
 ```
 
@@ -373,11 +373,11 @@ If you want to contribute configurations to this repository please open a Pull R
     add:
     - type: modbus
       model: sunspec
-      uri: 192.168.178.101:502
+      uri: 192.0.2.2:502
       id: 1
     - type: modbus
       model: sunspec
-      uri: 192.168.178.102:502
+      uri: 192.0.2.2:502
       id: 1
 ```
 
@@ -386,7 +386,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: sma
-  uri: 192.168.178.100
+  uri: 192.0.2.2
 ```
 
 <a id="meter-sma-sunny-island--sunny-boy-storage"></a>
@@ -394,7 +394,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 126
   soc: ChargeState
 ```
@@ -404,7 +404,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 126
 ```
 
@@ -481,7 +481,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: tesla
-  uri: http://192.168.178.100/
+  uri: http://192.0.2.2/
   usage: battery
 ```
 
@@ -490,7 +490,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: tesla
-  uri: http://192.168.178.100/
+  uri: http://192.0.2.2/
   usage: grid
 ```
 
@@ -499,7 +499,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: tesla
-  uri: http://192.168.178.100/
+  uri: http://192.0.2.2/
   usage: pv
 ```
 

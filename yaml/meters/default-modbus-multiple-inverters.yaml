@@ -6,9 +6,9 @@ sample: |
     add:
     - type: modbus
       model: sunspec
-      uri: 192.168.178.101:502
+      uri: 192.0.2.2:502
       id: 1
     - type: modbus
       model: sunspec
-      uri: 192.168.178.102:502
+      uri: 192.0.2.2:502
       id: 1

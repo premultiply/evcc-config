@@ -2,5 +2,5 @@ type: modbus
 name: Fronius Symo GEN24 Plus (Grid Meter)
 sample: |
   model: 213 # sunspec meter
-  uri: 192.168.178.100:502
+  uri: 192.0.2.2:502
   id: 200

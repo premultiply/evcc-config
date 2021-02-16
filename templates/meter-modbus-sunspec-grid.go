@@ -10,7 +10,7 @@ func init() {
 		Type:  "modbus",
 		Name:  "Generic SunSpec 3-phase meter (Grid Meter)",
 		Sample: `model: 203 # Wye Connect Meter Model
-uri: 192.168.178.100:502
+uri: 192.0.2.2:502
 id: 1`,
 	}
 

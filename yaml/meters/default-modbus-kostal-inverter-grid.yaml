@@ -3,7 +3,7 @@ name: Kostal Energy Meter via Inverter (Grid Meter)
 sample: |
   power:
     type: modbus # use ModBus plugin
-    uri: 192.168.178.100:1502 # inverter port
+    uri: 192.0.2.2:1502 # inverter port
     id: 71
     register: # manual non-sunspec register configuration
       address: 252 # (see ba_kostal_interface_modbus-tcp_sunspec.pdf)
