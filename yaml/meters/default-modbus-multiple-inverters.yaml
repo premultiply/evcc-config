@@ -1,15 +1,14 @@
 type: default
-name: Multiple Grid Inverters combined (PV Meter)
+name: Multiple PV inverters combined (PV Meter)
 sample: |
   power:
-    type: calc # use the calc plugin
-    add: # The add function sums up both string values
+    type: calc
+    add:
     - type: modbus
       model: sunspec
-      value: 160:1:DCW # string 1
-      uri: 192.0.2.2:1502 
-      id: 71 # Configured Modbus Device ID 
-    - type: modbus  
-      value: 160:2:DCW # string 2
-      uri: 192.0.2.2:1502 
-      id: 71 # Configured Modbus Device ID 
+      uri: 192.168.178.101:502
+      id: 1
+    - type: modbus
+      model: sunspec
+      uri: 192.168.178.102:502
+      id: 1
