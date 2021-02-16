@@ -8,9 +8,10 @@ func init() {
 	template := registry.Template{
 		Class: "meter",
 		Type:  "modbus",
-		Name:  "Kostal Inverter (PV Meter)",
-		Sample: `uri: 192.0.2.2:1502 # inverter port
-id: 71`,
+		Name:  "Generic SunSpec 3-phase meter (Grid Meter)",
+		Sample: `model: 203 # Wye Connect Meter Model
+uri: 192.168.178.100:502
+id: 1`,
 	}
 
 	registry.Add(template)
