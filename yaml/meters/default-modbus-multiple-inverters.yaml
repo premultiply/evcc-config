@@ -10,5 +10,5 @@ sample: |
       id: 1
     - type: modbus
       model: sunspec
-      uri: 192.0.2.2:502
+      uri: 192.0.2.3:502
       id: 1
