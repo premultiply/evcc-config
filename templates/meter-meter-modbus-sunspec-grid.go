@@ -8,9 +8,10 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "modbus",
-		Name:   "SMA SunnyBoy / TriPower / other PV-inverter",
-		Sample: `uri: 192.168.178.100:502
-id: 126`,
+		Name:   "Generic SunSpec 3-phase meter via inverter (Grid Meter)",
+		Sample: `model: 203 # sunspec meter
+uri: 192.168.178.100:502
+id: 1`,
 	}
 
 	registry.Add(template)

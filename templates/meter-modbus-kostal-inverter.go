@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,10 +6,10 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "modbus",
-		Name:  "Kostal Inverter (PV Meter)",
-		Sample: `uri: 192.0.2.2:1502 # inverter port
+		Class:  "meter",
+		Type:   "modbus",
+		Name:   "Kostal Inverter (PV Meter)",
+		Sample: `uri: 192.168.178.100:1502
 id: 71`,
 	}
 

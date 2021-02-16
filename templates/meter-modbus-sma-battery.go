@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,10 +6,10 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "modbus",
-		Name:  "SMA Sunny Island / Sunny Boy Storage (Battery)",
-		Sample: `uri: 192.168.178.103:502
+		Class:  "meter",
+		Type:   "modbus",
+		Name:   "SMA Sunny Island / Sunny Boy Storage",
+		Sample: `uri: 192.168.178.100:502
 id: 126
 soc: ChargeState`,
 	}

@@ -8,18 +8,20 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "Multiple PV inverters combined (PV Meter)",
+		Name:   "Fronius Symo GEN24 Plus (PV Meter)",
 		Sample: `power:
   type: calc
   add:
   - type: modbus
     model: sunspec
-    uri: 192.168.178.101:502
+    uri: 192.168.178.100:502
     id: 1
+    value: 160:1:DCW # mpp 1 pv
   - type: modbus
     model: sunspec
-    uri: 192.168.178.102:502
-    id: 1`,
+    uri: 192.168.178.100:502
+    id: 1
+    value: 160:2:DCW # mpp 2 pv`,
 	}
 
 	registry.Add(template)

@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,14 +6,14 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "default",
-		Name:  "Kostal Energy Meter via Inverter (Grid Meter)",
+		Class:  "meter",
+		Type:   "default",
+		Name:   "Kostal Energy Meter via Inverter (Grid Meter)",
 		Sample: `power:
   type: modbus # use ModBus plugin
-  uri: 192.0.2.2:1502 # inverter port
+  uri: 192.168.178.100:1502 # inverter port
   id: 71
-  register: # manual register configuration
+  register: # manual non-sunspec register configuration
     address: 252 # (see ba_kostal_interface_modbus-tcp_sunspec.pdf)
     type: holding
     decode: float32s # swapped float encoding`,

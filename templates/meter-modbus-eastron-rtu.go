@@ -8,9 +8,11 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "modbus",
-		Name:   "SMA SunnyBoy / TriPower / other PV-inverter",
-		Sample: `uri: 192.168.178.100:502
-id: 126`,
+		Name:   "Eastron SDM Modbus RTU Meter",
+		Sample: `model: sdm
+device: /dev/ttyUSB0 # serial port
+id: 2
+energy: Sum # this assignment is only required for charge meter usage`,
 	}
 
 	registry.Add(template)
