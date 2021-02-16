@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,9 +6,9 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "default",
-		Name:  "Fronius Symo GEN24 Plus (PV Meter)",
+		Class:  "meter",
+		Type:   "default",
+		Name:   "Fronius Symo GEN24 Plus (PV Meter)",
 		Sample: `power:
   type: calc
   add:

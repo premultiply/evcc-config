@@ -377,7 +377,7 @@ If you want to contribute configurations to this repository please open a Pull R
       id: 1
     - type: modbus
       model: sunspec
-      uri: 192.0.2.2:502
+      uri: 192.0.2.3:502
       id: 1
 ```
 

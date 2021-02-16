@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,9 +6,9 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "modbus",
-		Name:  "Generic SunSpec Battery inverter (Battery Meter)",
+		Class:  "meter",
+		Type:   "modbus",
+		Name:   "Generic SunSpec Battery inverter (Battery Meter)",
 		Sample: `uri: 192.0.2.2:502
 id: 1
 soc: ChargeState`,

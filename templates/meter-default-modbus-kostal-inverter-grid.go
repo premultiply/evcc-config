@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,9 +6,9 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "default",
-		Name:  "Kostal Energy Meter via Inverter (Grid Meter)",
+		Class:  "meter",
+		Type:   "default",
+		Name:   "Kostal Energy Meter via Inverter (Grid Meter)",
 		Sample: `power:
   type: modbus # use ModBus plugin
   uri: 192.0.2.2:1502 # inverter port
