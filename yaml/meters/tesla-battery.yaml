@@ -1,5 +1,5 @@
 type: tesla
 name: Tesla Powerwall (Battery)
 sample: |
-  uri: http://192.0.2.2/
-  usage: battery # value: `grid`, `pv`, `battery`
+  uri: http://192.168.178.100/
+  usage: battery

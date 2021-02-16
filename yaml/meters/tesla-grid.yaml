@@ -1,5 +1,5 @@
 type: tesla
 name: Tesla Powerwall (Grid meter)
 sample: |
-  uri: http://192.0.2.2/
-  usage: grid # value: `grid`, `pv`, `battery`
+  uri: http://192.168.178.100/
+  usage: grid
