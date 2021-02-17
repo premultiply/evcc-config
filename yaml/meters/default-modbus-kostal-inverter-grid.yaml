@@ -1,5 +1,5 @@
 type: default
-name: Kostal Energy Meter via Inverter (Grid Meter)
+name: Kostal Energy Meter via inverter (Grid Meter)
 sample: |
   power:
     type: modbus # use ModBus plugin
