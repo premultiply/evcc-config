@@ -48,11 +48,11 @@ If you want to contribute configurations to this repository please open a Pull R
 - [Fronius Symo GEN24 Plus (Grid Meter)](#meter-fronius-symo-gen24-plus-grid-meter)
 - [Fronius Symo GEN24 Plus (PV Meter)](#meter-fronius-symo-gen24-plus-pv-meter)
 - [Generic SunSpec 3-phase meter via inverter (Grid Meter)](#meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter)
-- [Generic SunSpec Battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
+- [Generic SunSpec battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
 - [Generic SunSpec PV inverter (PV Meter)](#meter-generic-sunspec-pv-inverter-pv-meter)
 - [Generisch (MQTT)](#meter-generisch-mqtt)
 - [Generisch (Script)](#meter-generisch-script)
-- [Kostal Energy Meter via Inverter (Grid Meter)](#meter-kostal-energy-meter-via-inverter-grid-meter)
+- [Kostal Energy Meter via inverter (Grid Meter)](#meter-kostal-energy-meter-via-inverter-grid-meter)
 - [Kostal Inverter (PV Meter)](#meter-kostal-inverter-pv-meter)
 - [Kostal Smart Energy Meter (Grid Meter)](#meter-kostal-smart-energy-meter-grid-meter)
 - [Multiple DC MPP strings combined (PV Meter)](#meter-multiple-dc-mpp-strings-combined-pv-meter)
@@ -165,7 +165,7 @@ If you want to contribute configurations to this repository please open a Pull R
   model: sdm
   uri: 192.0.2.2:502
   rtu: true # serial modbus rtu (rs485) device connected using simple ethernet adapter
-  id: 2
+  id: 1
   energy: Sum # this assignment is only required for charge meter usage
 ```
 
@@ -176,7 +176,7 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: modbus
   model: sdm
   device: /dev/ttyUSB0 # serial port
-  id: 2
+  id: 1
   energy: Sum # this assignment is only required for charge meter usage
 ```
 
@@ -270,7 +270,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```
 
 <a id="meter-generic-sunspec-battery-inverter-battery-meter"></a>
-#### Generic SunSpec Battery inverter (Battery Meter)
+#### Generic SunSpec battery inverter (Battery Meter)
 
 ```yaml
 - type: modbus
@@ -311,7 +311,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```
 
 <a id="meter-kostal-energy-meter-via-inverter-grid-meter"></a>
-#### Kostal Energy Meter via Inverter (Grid Meter)
+#### Kostal Energy Meter via inverter (Grid Meter)
 
 ```yaml
 - type: default

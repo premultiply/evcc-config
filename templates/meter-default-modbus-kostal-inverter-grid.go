@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "Kostal Energy Meter via Inverter (Grid Meter)",
+		Name:   "Kostal Energy Meter via inverter (Grid Meter)",
 		Sample: `power:
   type: modbus # use ModBus plugin
   uri: 192.0.2.2:1502 # inverter port

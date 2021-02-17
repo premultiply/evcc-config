@@ -11,7 +11,7 @@ func init() {
 		Name:   "Eastron SDM Modbus RTU Meter",
 		Sample: `model: sdm
 device: /dev/ttyUSB0 # serial port
-id: 2
+id: 1
 energy: Sum # this assignment is only required for charge meter usage`,
 	}
 
