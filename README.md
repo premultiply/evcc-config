@@ -51,10 +51,7 @@ If you want to contribute configurations to this repository please open a Pull R
 - [Generic (MQTT)](#meter-generic-mqtt)
 - [Generic (Script)](#meter-generic-script)
 - [Generic SunSpec 3-phase meter via inverter (Grid Meter)](#meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter)
-- [Generic SunSpec 3-phase meter via inverter (Grid Meter)](#meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter)
 - [Generic SunSpec battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
-- [Generic SunSpec battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
-- [Generic SunSpec PV inverter (PV Meter)](#meter-generic-sunspec-pv-inverter-pv-meter)
 - [Generic SunSpec PV inverter (PV Meter)](#meter-generic-sunspec-pv-inverter-pv-meter)
 - [Kostal Energy Meter via inverter (Grid Meter)](#meter-kostal-energy-meter-via-inverter-grid-meter)
 - [Kostal Inverter (PV Meter)](#meter-kostal-inverter-pv-meter)
@@ -312,26 +309,6 @@ If you want to contribute configurations to this repository please open a Pull R
   id: 1
 ```
 
-<a id="meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter"></a>
-#### Generic SunSpec 3-phase meter via inverter (Grid Meter)
-
-```yaml
-- type: modbus
-  model: 203 # sunspec meter
-  uri: 192.0.2.2:502
-  id: 1
-```
-
-<a id="meter-generic-sunspec-battery-inverter-battery-meter"></a>
-#### Generic SunSpec battery inverter (Battery Meter)
-
-```yaml
-- type: modbus
-  uri: 192.0.2.2:502
-  id: 1
-  soc: ChargeState
-```
-
 <a id="meter-generic-sunspec-battery-inverter-battery-meter"></a>
 #### Generic SunSpec battery inverter (Battery Meter)
 
@@ -349,15 +326,6 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: modbus
   uri: 192.0.2.2:502
   id: 1
-```
-
-<a id="meter-generic-sunspec-pv-inverter-pv-meter"></a>
-#### Generic SunSpec PV inverter (PV Meter)
-
-```yaml
-- type: modbus
-  uri: 192.0.2.2:502
-  id: 126
 ```
 
 <a id="meter-kostal-energy-meter-via-inverter-grid-meter"></a>
