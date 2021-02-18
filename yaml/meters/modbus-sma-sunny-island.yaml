@@ -1,8 +1,0 @@
-type: modbus
-name: SMA Sunny Island (Battery)
-sample: |
-  model: sunny-island
-  uri: 192.0.2.2:502
-  id: 126
-  power: Power # default values, optionally override
-  soc: ChargeState # battery soc (Ladezustand)

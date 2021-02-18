@@ -1,4 +1,4 @@
-package templates
+package templates 
 
 import (
 	"github.com/andig/evcc-config/registry"
@@ -6,12 +6,13 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class: "meter",
-		Type:  "modbus",
-		Name:  "Eastron SDM Modbus Meter (RTU)",
+		Class:  "meter",
+		Type:   "modbus",
+		Name:   "Eastron SDM Modbus RTU Meter",
 		Sample: `model: sdm
 device: /dev/ttyUSB0 # serial port
-id: 2`,
+id: 1
+energy: Sum # this assignment is only required for charge meter usage`,
 	}
 
 	registry.Add(template)

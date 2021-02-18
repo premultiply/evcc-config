@@ -8,10 +8,10 @@ func init() {
 	template := registry.Template{
 		Class: "meter",
 		Type:  "modbus",
-		Name:  "Eastron SDM Modbus Meter (RTU)",
-		Sample: `model: sdm
-device: /dev/ttyUSB0 # serial port
-id: 2`,
+		Name:  "Generic SunSpec Battery inverter (Battery Meter)",
+		Sample: `uri: 192.0.2.2:502
+id: 1
+soc: ChargeState`,
 	}
 
 	registry.Add(template)

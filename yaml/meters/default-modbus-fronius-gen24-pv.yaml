@@ -1,5 +1,5 @@
 type: default
-name: Multiple PV inverters combined (PV Meter)
+name: Fronius Symo GEN24 Plus (PV Meter)
 sample: |
   power:
     type: calc
@@ -8,7 +8,9 @@ sample: |
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
+      value: 160:1:DCW # mpp 1 pv
     - type: modbus
       model: sunspec
-      uri: 192.0.2.3:502
+      uri: 192.0.2.2:502
       id: 1
+      value: 160:2:DCW # mpp 2 pv

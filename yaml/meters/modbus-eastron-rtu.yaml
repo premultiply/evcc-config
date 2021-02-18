@@ -1,0 +1,7 @@
+type: modbus
+name: Eastron SDM Modbus RTU Meter
+sample: |
+  model: sdm
+  device: /dev/ttyUSB0 # serial port
+  id: 1
+  energy: Sum # this assignment is only required for charge meter usage

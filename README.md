@@ -40,20 +40,26 @@ If you want to contribute configurations to this repository please open a Pull R
 - [E3DC (Battery)](#meter-e3dc-battery)
 - [E3DC (Grid Meter)](#meter-e3dc-grid-meter)
 - [E3DC (PV Meter)](#meter-e3dc-pv-meter)
+- [Eastron SDM Modbus Meter (RTU-over-TCP)](#meter-eastron-sdm-modbus-meter-rtu-over-tcp)
+- [Eastron SDM Modbus RTU Meter](#meter-eastron-sdm-modbus-rtu-meter)
 - [Fronius Solar API V1 (Grid S0 meter/ HTTP)](#meter-fronius-solar-api-v1-grid-s0-meter-http)
 - [Fronius Solar API V1 (PV meter/ HTTP)](#meter-fronius-solar-api-v1-pv-meter-http)
+- [Fronius Symo GEN24 Plus (Battery Meter)](#meter-fronius-symo-gen24-plus-battery-meter)
+- [Fronius Symo GEN24 Plus (Grid Meter)](#meter-fronius-symo-gen24-plus-grid-meter)
+- [Fronius Symo GEN24 Plus (PV Meter)](#meter-fronius-symo-gen24-plus-pv-meter)
+- [Generic SunSpec 3-phase meter via inverter (Grid Meter)](#meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter)
+- [Generic SunSpec battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
+- [Generic SunSpec PV inverter (PV Meter)](#meter-generic-sunspec-pv-inverter-pv-meter)
 - [Generisch (MQTT)](#meter-generisch-mqtt)
 - [Generisch (Script)](#meter-generisch-script)
-- [Kostal Inverter (Grid Meter)](#meter-kostal-inverter-grid-meter)
+- [Kostal Energy Meter via inverter (Grid Meter)](#meter-kostal-energy-meter-via-inverter-grid-meter)
 - [Kostal Inverter (PV Meter)](#meter-kostal-inverter-pv-meter)
 - [Kostal Smart Energy Meter (Grid Meter)](#meter-kostal-smart-energy-meter-grid-meter)
-- [Modbus (Ethernet)](#meter-modbus-ethernet)
-- [Modbus (RTU)](#meter-modbus-rtu)
-- [Multiple Grid Inverters combined (PV Meter)](#meter-multiple-grid-inverters-combined-pv-meter)
-- [SMA Sunny Boy Storage (Battery)](#meter-sma-sunny-boy-storage-battery)
-- [SMA Sunny Home Manager 2.0 / SMA Energy Meter 30](#meter-sma-sunny-home-manager-2-0--sma-energy-meter-30)
-- [SMA Sunny Island (Battery)](#meter-sma-sunny-island-battery)
-- [SMA SunnyBoy / TriPower / other SunSpec PV-inverters (PV Meter)](#meter-sma-sunnyboy--tripower--other-sunspec-pv-inverters-pv-meter)
+- [Multiple DC MPP strings combined (PV Meter)](#meter-multiple-dc-mpp-strings-combined-pv-meter)
+- [Multiple PV inverters combined (PV Meter)](#meter-multiple-pv-inverters-combined-pv-meter)
+- [SMA Sunny Home Manager / Energy Meter (Speedwire)](#meter-sma-sunny-home-manager--energy-meter-speedwire)
+- [SMA Sunny Island / Sunny Boy Storage](#meter-sma-sunny-island--sunny-boy-storage)
+- [SMA SunnyBoy / TriPower / other PV-inverter](#meter-sma-sunnyboy--tripower--other-pv-inverter)
 - [Solarlog (Grid Meter)](#meter-solarlog-grid-meter)
 - [Solarlog (PV Meter)](#meter-solarlog-pv-meter)
 - [Sonnenbatterie Eco/10 (Battery/ HTTP)](#meter-sonnenbatterie-eco-10-battery-http)
@@ -151,6 +157,29 @@ If you want to contribute configurations to this repository please open a Pull R
       decode: int32s
 ```
 
+<a id="meter-eastron-sdm-modbus-meter-rtu-over-tcp"></a>
+#### Eastron SDM Modbus Meter (RTU-over-TCP)
+
+```yaml
+- type: modbus
+  model: sdm
+  uri: 192.0.2.2:502
+  rtu: true # serial modbus rtu (rs485) device connected using simple ethernet adapter
+  id: 1
+  energy: Sum # this assignment is only required for charge meter usage
+```
+
+<a id="meter-eastron-sdm-modbus-rtu-meter"></a>
+#### Eastron SDM Modbus RTU Meter
+
+```yaml
+- type: modbus
+  model: sdm
+  device: /dev/ttyUSB0 # serial port
+  id: 1
+  energy: Sum # this assignment is only required for charge meter usage
+```
+
 <a id="meter-fronius-solar-api-v1-grid-s0-meter-http"></a>
 #### Fronius Solar API V1 (Grid S0 meter/ HTTP)
 
@@ -171,6 +200,92 @@ If you want to contribute configurations to this repository please open a Pull R
     type: http # use http plugin for pv power (P_PV)
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
     jq: if .Body.Data.Site.P_PV == null then 0 else .Body.Data.Site.P_PV end # parse GetPowerFlowRealtimeData P_PV response
+```
+
+<a id="meter-fronius-symo-gen24-plus-battery-meter"></a>
+#### Fronius Symo GEN24 Plus (Battery Meter)
+
+```yaml
+- type: default
+  power:
+    type: calc
+    add:
+    - type: modbus
+      model: sunspec
+      uri: 192.0.2.2:502
+      id: 1
+      value: 160:3:DCW # mppt 3 charge
+      scale: -1
+    - type: modbus
+      model: sunspec
+      uri: 192.0.2.2:502
+      id: 1
+      value: 160:4:DCW # mppt 4 discharge
+  soc:
+    type: modbus
+    model: sunspec
+    uri: 192.0.2.2:502
+    id: 1
+    value: ChargeState
+```
+
+<a id="meter-fronius-symo-gen24-plus-grid-meter"></a>
+#### Fronius Symo GEN24 Plus (Grid Meter)
+
+```yaml
+- type: modbus
+  model: 213 # sunspec meter
+  uri: 192.0.2.2:502
+  id: 200
+```
+
+<a id="meter-fronius-symo-gen24-plus-pv-meter"></a>
+#### Fronius Symo GEN24 Plus (PV Meter)
+
+```yaml
+- type: default
+  power:
+    type: calc
+    add:
+    - type: modbus
+      model: sunspec
+      uri: 192.0.2.2:502
+      id: 1
+      value: 160:1:DCW # mpp 1 pv
+    - type: modbus
+      model: sunspec
+      uri: 192.0.2.2:502
+      id: 1
+      value: 160:2:DCW # mpp 2 pv
+```
+
+<a id="meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter"></a>
+#### Generic SunSpec 3-phase meter via inverter (Grid Meter)
+
+```yaml
+- type: modbus
+  model: 203 # sunspec meter
+  uri: 192.0.2.2:502
+  id: 1
+```
+
+<a id="meter-generic-sunspec-battery-inverter-battery-meter"></a>
+#### Generic SunSpec battery inverter (Battery Meter)
+
+```yaml
+- type: modbus
+  uri: 192.0.2.2:502
+  id: 1
+  soc: ChargeState
+```
+
+<a id="meter-generic-sunspec-pv-inverter-pv-meter"></a>
+#### Generic SunSpec PV inverter (PV Meter)
+
+```yaml
+- type: modbus
+  uri: 192.0.2.2:502
+  id: 126
 ```
 
 <a id="meter-generisch-mqtt"></a>
@@ -195,20 +310,19 @@ If you want to contribute configurations to this repository please open a Pull R
     timeout: 3s # kill script after 3 seconds
 ```
 
-<a id="meter-kostal-inverter-grid-meter"></a>
-#### Kostal Inverter (Grid Meter)
+<a id="meter-kostal-energy-meter-via-inverter-grid-meter"></a>
+#### Kostal Energy Meter via inverter (Grid Meter)
 
 ```yaml
 - type: default
   power:
     type: modbus # use ModBus plugin
-    model: kostal
-    uri: 192.0.2.2:1502 
-    id: 71 # Configured Modbus Device ID 
-    register: # manual register configuration
-      address: 252 # (see https://www.kostal-solar-electric.com/de-de/download/-/media/document-library-folder---kse/2018/08/30/08/53/ba_kostal_interface_modbus-tcp_sunspec.pdf)
+    uri: 192.0.2.2:1502 # inverter port
+    id: 71
+    register: # manual non-sunspec register configuration
+      address: 252 # (see ba_kostal_interface_modbus-tcp_sunspec.pdf)
       type: holding
-      decode: float32s #swapped float encoding
+      decode: float32s # swapped float encoding
 ```
 
 <a id="meter-kostal-inverter-pv-meter"></a>
@@ -216,10 +330,8 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  model: kostal
   uri: 192.0.2.2:1502
   id: 71
-  power: Power
 ```
 
 <a id="meter-kostal-smart-energy-meter-grid-meter"></a>
@@ -227,100 +339,73 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  model: kostal
   uri: 192.0.2.2:502
   id: 71
-  power: Power
-  energy: Energy
 ```
 
-<a id="meter-modbus-ethernet"></a>
-#### Modbus (Ethernet)
-
-```yaml
-- type: modbus
-  model: sdm
-  uri: 192.0.2.2:502
-  rtu: true # rs485 device connected using ethernet adapter
-  id: 2
-  power: Power # default values, optionally override
-  energy: Sum # default values, optionally override
-```
-
-<a id="meter-modbus-rtu"></a>
-#### Modbus (RTU)
-
-```yaml
-- type: modbus
-  model: sdm
-  uri: 192.0.2.2:502
-  rtu: true # rs485 device connected using ethernet adapter
-  id: 2
-  power: Power # default value, optionally override
-  energy: Sum # energy value (Zählerstand)
-```
-
-<a id="meter-multiple-grid-inverters-combined-pv-meter"></a>
-#### Multiple Grid Inverters combined (PV Meter)
+<a id="meter-multiple-dc-mpp-strings-combined-pv-meter"></a>
+#### Multiple DC MPP strings combined (PV Meter)
 
 ```yaml
 - type: default
   power:
-    type: calc # use the calc plugin
-    add: # The add function sums up both string values
+    type: calc
+    add:
     - type: modbus
       model: sunspec
-      value: 160:1:DCW # string 1
-      uri: 192.0.2.2:1502 
-      id: 71 # Configured Modbus Device ID 
-    - type: modbus  
-      value: 160:2:DCW # string 2
-      uri: 192.0.2.2:1502 
-      id: 71 # Configured Modbus Device ID 
+      value: 160:1:DCW # SunSpec Model 160 MPP string 1 DCW
+      uri: 192.0.2.2:502
+      id: 1
+    - type: modbus
+      model: sunspec
+      value: 160:2:DCW # SunSpec Model 160 MPP string 2 DCW
+      uri: 192.0.2.2:502
+      id: 1
 ```
 
-<a id="meter-sma-sunny-boy-storage-battery"></a>
-#### SMA Sunny Boy Storage (Battery)
+<a id="meter-multiple-pv-inverters-combined-pv-meter"></a>
+#### Multiple PV inverters combined (PV Meter)
 
 ```yaml
-- type: modbus
-  uri: 192.0.2.2:502
-  id: 126 # ModBus slave id
-  model: sma-sunspec
-  power: Power # default value, optionally override
-  soc: ChargeState # battery soc (Ladezustand)
+- type: default
+  power:
+    type: calc
+    add:
+    - type: modbus
+      model: sunspec
+      uri: 192.0.2.2:502
+      id: 1
+    - type: modbus
+      model: sunspec
+      uri: 192.0.2.3:502
+      id: 1
 ```
 
-<a id="meter-sma-sunny-home-manager-2-0--sma-energy-meter-30"></a>
-#### SMA Sunny Home Manager 2.0 / SMA Energy Meter 30
+<a id="meter-sma-sunny-home-manager--energy-meter-speedwire"></a>
+#### SMA Sunny Home Manager / Energy Meter (Speedwire)
 
 ```yaml
 - type: sma
-  serial: 1234567890 # Serial number of the device
+  uri: 192.0.2.2
 ```
 
-<a id="meter-sma-sunny-island-battery"></a>
-#### SMA Sunny Island (Battery)
+<a id="meter-sma-sunny-island--sunny-boy-storage"></a>
+#### SMA Sunny Island / Sunny Boy Storage
 
 ```yaml
 - type: modbus
-  model: sunny-island
   uri: 192.0.2.2:502
   id: 126
-  power: Power # default values, optionally override
-  soc: ChargeState # battery soc (Ladezustand)
+  soc: ChargeState
 ```
 
-<a id="meter-sma-sunnyboy--tripower--other-sunspec-pv-inverters-pv-meter"></a>
-#### SMA SunnyBoy / TriPower / other SunSpec PV-inverters (PV Meter)
+<a id="meter-sma-sunnyboy--tripower--other-pv-inverter"></a>
+#### SMA SunnyBoy / TriPower / other PV-inverter
 
 ```yaml
 - type: modbus
-  uri:192.0.2.2:502
-  id: 126 # ModBus slave id
-  model: sma-sunspec
-  power: Power # default value, optionally override
-  energy: Sum # energy value (Zählerstand)
+  uri: 192.0.2.2:502
+  id: 126
 ```
 
 <a id="meter-solarlog-grid-meter"></a>
@@ -397,7 +482,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: tesla
   uri: http://192.0.2.2/
-  usage: battery # value: `grid`, `pv`, `battery`
+  usage: battery
 ```
 
 <a id="meter-tesla-powerwall-grid-meter"></a>
@@ -406,7 +491,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: tesla
   uri: http://192.0.2.2/
-  usage: grid # value: `grid`, `pv`, `battery`
+  usage: grid
 ```
 
 <a id="meter-tesla-powerwall-pv-meter"></a>
@@ -415,7 +500,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: tesla
   uri: http://192.0.2.2/
-  usage: pv # value: `grid`, `pv`, `battery`
+  usage: pv
 ```
 
 <a id="meter-vzlogger-http"></a>

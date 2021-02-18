@@ -1,7 +1,5 @@
 type: modbus
 name: Kostal Inverter (PV Meter)
 sample: |
-  model: kostal
   uri: 192.0.2.2:1502
   id: 71
-  power: Power

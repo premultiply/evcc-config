@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "tesla",
-		Name:   "Tesla Powerwall (Grid meter)",
-		Sample: `uri: http://192.0.2.2/
-usage: grid`,
+		Type:   "modbus",
+		Name:   "Generic SunSpec PV inverter (PV Meter)",
+		Sample: `uri: 192.0.2.2:502
+id: 126`,
 	}
 
 	registry.Add(template)

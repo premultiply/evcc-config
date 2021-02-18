@@ -10,7 +10,7 @@ func init() {
 		Type:   "tesla",
 		Name:   "Tesla Powerwall (PV meter)",
 		Sample: `uri: http://192.0.2.2/
-usage: pv # value: `+"`"+`grid`+"`"+`, `+"`"+`pv`+"`"+`, `+"`"+`battery`+"`"+``,
+usage: pv`,
 	}
 
 	registry.Add(template)

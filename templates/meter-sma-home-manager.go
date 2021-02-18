@@ -8,8 +8,8 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "sma",
-		Name:   "SMA Sunny Home Manager 2.0 / SMA Energy Meter 30",
-		Sample: `serial: 1234567890 # Serial number of the device`,
+		Name:   "SMA Sunny Home Manager / Energy Meter (Speedwire)",
+		Sample: `uri: 192.0.2.2`,
 	}
 
 	registry.Add(template)
