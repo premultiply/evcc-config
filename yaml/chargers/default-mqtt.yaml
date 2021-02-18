@@ -1,5 +1,5 @@
 type: default # Configurable charger
-name: Generisch (MQTT)
+name: Generic (MQTT)
 sample: |
   status: # charger status A..F
     type: mqtt

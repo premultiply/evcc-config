@@ -1,7 +1,7 @@
-type: phoenix-evcc # Charger with Phoenix Contact controller
-name: Phoenix EV-CC Controller (Modbus)
+type: phoenix-evcc
+name: Phoenix EV-CC Controller (Modbus RTU)
 sample: |
   device: /dev/ttyUSB0
   baudrate: 9600
   comset: 8N1
-  id: 1 # slave id
+  id: 1

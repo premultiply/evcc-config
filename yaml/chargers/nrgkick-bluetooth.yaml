@@ -1,5 +1,5 @@
-type: nrgkick-bluetooth # NRGKick charger with Bluetooth
-name: NRGKick Bluetooth
+type: nrgkick-bluetooth
+name: NRGKick BT (Bluetooth)
 sample: |
-  macaddress: 00:99:22 # MAC address
-  pin: # pin
+  macaddress: 00:99:22 # BT device MAC address
+  pin: # App PIN number (write protection)

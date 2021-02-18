@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "Generisch (MQTT)",
+		Name:   "Generic (MQTT)",
 		Sample: `power: # power reading
   type: mqtt # use mqtt plugin
   topic: mbmd/sdm1-1/Power # mqtt topic

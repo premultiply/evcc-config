@@ -1,4 +1,4 @@
-type: go-e # go-eCharger
+type: go-e
 name: go-eCharger (Cloud)
 sample: |
   token: 4711c # go-e cloud API token

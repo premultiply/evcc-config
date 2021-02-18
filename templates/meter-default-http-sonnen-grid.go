@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "Sonnenbatterie Eco/10 (Grid meter/ HTTP)",
+		Name:   "Sonnenbatterie Eco/10 (Grid Meter/ HTTP)",
 		Sample: `power: # power reading
   type: http # use http plugin
   uri: http://192.0.2.2:8080/api/v1/status

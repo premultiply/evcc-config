@@ -16,60 +16,61 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ## Chargers
 
-- [EVSE Wifi](#charger-evse-wifi)
-- [Generisch](#charger-generisch)
-- [Generisch (MQTT)](#charger-generisch-mqtt)
+- [EVSE DIN (Modbus RTU)](#charger-evse-din-modbus-rtu)
+- [EVSE DIN (Modbus/TCP)](#charger-evse-din-modbus-tcp)
+- [EVSE-Wifi](#charger-evse-wifi)
+- [Generic](#charger-generic)
+- [Generic (MQTT)](#charger-generic-mqtt)
+- [go-eCharger](#charger-go-echarger)
 - [go-eCharger (Cloud)](#charger-go-echarger-cloud)
-- [go-eCharger (Lokal)](#charger-go-echarger-lokal)
-- [i-CHARGE CION (Modbus)](#charger-i-charge-cion-modbus)
+- [i-CHARGE CION (Modbus RTU-over-TCP)](#charger-i-charge-cion-modbus-rtu-over-tcp)
 - [KEBA Connect](#charger-keba-connect)
-- [Mobile Charger Connect](#charger-mobile-charger-connect)
-- [NRGKick Bluetooth](#charger-nrgkick-bluetooth)
+- [Mobile Charger Connect (Audi, Bentley, Porsche)](#charger-mobile-charger-connect-audi-bentley-porsche)
+- [NRGKick BT (Bluetooth)](#charger-nrgkick-bt-bluetooth)
 - [NRGKick Connect](#charger-nrgkick-connect)
 - [openWB (MQTT)](#charger-openwb-mqtt)
-- [Phoenix EM-CP Controller (Ethernet/Modbus TCP)](#charger-phoenix-em-cp-controller-ethernet-modbus-tcp)
-- [Phoenix EV-CC Controller (Modbus)](#charger-phoenix-ev-cc-controller-modbus)
-- [Simple EVSE (Ethernet/Modbus TCP)](#charger-simple-evse-ethernet-modbus-tcp)
-- [Simple EVSE (RS485)](#charger-simple-evse-rs485)
+- [Phoenix EM-CP Controller (Modbus/TCP)](#charger-phoenix-em-cp-controller-modbus-tcp)
+- [Phoenix EV-CC Controller (Modbus RTU)](#charger-phoenix-ev-cc-controller-modbus-rtu)
 - [Wallbe (Eco, Pro)](#charger-wallbe-eco-pro)
 - [Wallbe (pre 2019 EV-CC-AC1 controller)](#charger-wallbe-pre-2019-ev-cc-ac1-controller)
 
 ## Meters
 
 - [Discovergy](#meter-discovergy)
-- [E3DC (Battery)](#meter-e3dc-battery)
+- [E3DC (Battery Meter)](#meter-e3dc-battery-meter)
 - [E3DC (Grid Meter)](#meter-e3dc-grid-meter)
 - [E3DC (PV Meter)](#meter-e3dc-pv-meter)
+- [Eastron SDM Modbus Meter (RTU)](#meter-eastron-sdm-modbus-meter-rtu)
 - [Eastron SDM Modbus Meter (RTU-over-TCP)](#meter-eastron-sdm-modbus-meter-rtu-over-tcp)
-- [Eastron SDM Modbus RTU Meter](#meter-eastron-sdm-modbus-rtu-meter)
-- [Fronius Solar API V1 (Grid S0 meter/ HTTP)](#meter-fronius-solar-api-v1-grid-s0-meter-http)
-- [Fronius Solar API V1 (PV meter/ HTTP)](#meter-fronius-solar-api-v1-pv-meter-http)
+- [Fronius Solar API V1 (Battery Meter/ HTTP)](#meter-fronius-solar-api-v1-battery-meter-http)
+- [Fronius Solar API V1 (Grid Meter/ HTTP)](#meter-fronius-solar-api-v1-grid-meter-http)
+- [Fronius Solar API V1 (PV Meter/ HTTP)](#meter-fronius-solar-api-v1-pv-meter-http)
 - [Fronius Symo GEN24 Plus (Battery Meter)](#meter-fronius-symo-gen24-plus-battery-meter)
 - [Fronius Symo GEN24 Plus (Grid Meter)](#meter-fronius-symo-gen24-plus-grid-meter)
 - [Fronius Symo GEN24 Plus (PV Meter)](#meter-fronius-symo-gen24-plus-pv-meter)
+- [Generic (MQTT)](#meter-generic-mqtt)
+- [Generic (Script)](#meter-generic-script)
 - [Generic SunSpec 3-phase meter via inverter (Grid Meter)](#meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter)
 - [Generic SunSpec battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
 - [Generic SunSpec PV inverter (PV Meter)](#meter-generic-sunspec-pv-inverter-pv-meter)
-- [Generisch (MQTT)](#meter-generisch-mqtt)
-- [Generisch (Script)](#meter-generisch-script)
 - [Kostal Energy Meter via inverter (Grid Meter)](#meter-kostal-energy-meter-via-inverter-grid-meter)
 - [Kostal Inverter (PV Meter)](#meter-kostal-inverter-pv-meter)
 - [Kostal Smart Energy Meter (Grid Meter)](#meter-kostal-smart-energy-meter-grid-meter)
 - [Multiple DC MPP strings combined (PV Meter)](#meter-multiple-dc-mpp-strings-combined-pv-meter)
 - [Multiple PV inverters combined (PV Meter)](#meter-multiple-pv-inverters-combined-pv-meter)
 - [SMA Sunny Home Manager / Energy Meter (Speedwire)](#meter-sma-sunny-home-manager--energy-meter-speedwire)
-- [SMA Sunny Island / Sunny Boy Storage](#meter-sma-sunny-island--sunny-boy-storage)
-- [SMA SunnyBoy / TriPower / other PV-inverter](#meter-sma-sunnyboy--tripower--other-pv-inverter)
+- [SMA Sunny Island / Sunny Boy Storage (Battery Meter)](#meter-sma-sunny-island--sunny-boy-storage-battery-meter)
+- [SMA SunnyBoy / TriPower / other PV-inverter (PV Meter)](#meter-sma-sunnyboy--tripower--other-pv-inverter-pv-meter)
 - [Solaredge (Grid Meter)](#meter-solaredge-grid-meter)
 - [SolarEdge StorEdge (Battery Meter)](#meter-solaredge-storedge-battery-meter)
 - [Solarlog (Grid Meter)](#meter-solarlog-grid-meter)
 - [Solarlog (PV Meter)](#meter-solarlog-pv-meter)
-- [Sonnenbatterie Eco/10 (Battery/ HTTP)](#meter-sonnenbatterie-eco-10-battery-http)
-- [Sonnenbatterie Eco/10 (Grid meter/ HTTP)](#meter-sonnenbatterie-eco-10-grid-meter-http)
-- [Sonnenbatterie Eco/10 (PV meter/ HTTP)](#meter-sonnenbatterie-eco-10-pv-meter-http)
-- [Tesla Powerwall (Battery)](#meter-tesla-powerwall-battery)
-- [Tesla Powerwall (Grid meter)](#meter-tesla-powerwall-grid-meter)
-- [Tesla Powerwall (PV meter)](#meter-tesla-powerwall-pv-meter)
+- [Sonnenbatterie Eco/10 (Battery Meter/ HTTP)](#meter-sonnenbatterie-eco-10-battery-meter-http)
+- [Sonnenbatterie Eco/10 (Grid Meter/ HTTP)](#meter-sonnenbatterie-eco-10-grid-meter-http)
+- [Sonnenbatterie Eco/10 (PV Meter/ HTTP)](#meter-sonnenbatterie-eco-10-pv-meter-http)
+- [Tesla Powerwall (Battery Meter)](#meter-tesla-powerwall-battery-meter)
+- [Tesla Powerwall (Grid Meter)](#meter-tesla-powerwall-grid-meter)
+- [Tesla Powerwall (PV Meter)](#meter-tesla-powerwall-pv-meter)
 - [vzlogger (HTTP)](#meter-vzlogger-http)
 - [vzlogger (Push Server/ Websocket)](#meter-vzlogger-push-server-websocket)
 - [vzlogger (split import/export channels)](#meter-vzlogger-split-import-export-channels)
@@ -105,8 +106,8 @@ If you want to contribute configurations to this repository please open a Pull R
   meter: 1ESY1161229886
 ```
 
-<a id="meter-e3dc-battery"></a>
-#### E3DC (Battery)
+<a id="meter-e3dc-battery-meter"></a>
+#### E3DC (Battery Meter)
 
 ```yaml
 - type: default
@@ -159,6 +160,17 @@ If you want to contribute configurations to this repository please open a Pull R
       decode: int32s
 ```
 
+<a id="meter-eastron-sdm-modbus-meter-rtu"></a>
+#### Eastron SDM Modbus Meter (RTU)
+
+```yaml
+- type: modbus
+  model: sdm
+  device: /dev/ttyUSB0 # serial port
+  id: 1
+  energy: Sum # this assignment is only required for charge meter usage
+```
+
 <a id="meter-eastron-sdm-modbus-meter-rtu-over-tcp"></a>
 #### Eastron SDM Modbus Meter (RTU-over-TCP)
 
@@ -171,37 +183,41 @@ If you want to contribute configurations to this repository please open a Pull R
   energy: Sum # this assignment is only required for charge meter usage
 ```
 
-<a id="meter-eastron-sdm-modbus-rtu-meter"></a>
-#### Eastron SDM Modbus RTU Meter
-
-```yaml
-- type: modbus
-  model: sdm
-  device: /dev/ttyUSB0 # serial port
-  id: 1
-  energy: Sum # this assignment is only required for charge meter usage
-```
-
-<a id="meter-fronius-solar-api-v1-grid-s0-meter-http"></a>
-#### Fronius Solar API V1 (Grid S0 meter/ HTTP)
+<a id="meter-fronius-solar-api-v1-battery-meter-http"></a>
+#### Fronius Solar API V1 (Battery Meter/ HTTP)
 
 ```yaml
 - type: default
-  power: # Grid power reading Fronius Solar API V1 GetPowerFlowRealtimeData.P_Grid
-    type: http # use http plugin for grid power (P_Grid)
+  power:
+    type: http
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
-    jq: if .Body.Data.Site.P_Grid == null then 0 else .Body.Data.Site.P_Grid end # parse GetPowerFlowRealtimeData P_Grid response
+    jq: .Body.Data.Site.P_Akku == null then 0 else .Body.Data.Site.P_Akku end
+  soc:
+    type: http
+    uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
+    jq: .Body.Data.Inverters."1".SOC
+```
+
+<a id="meter-fronius-solar-api-v1-grid-meter-http"></a>
+#### Fronius Solar API V1 (Grid Meter/ HTTP)
+
+```yaml
+- type: default
+  power:
+    type: http
+    uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
+    jq: if .Body.Data.Site.P_Grid == null then 0 else .Body.Data.Site.P_Grid end
 ```
 
 <a id="meter-fronius-solar-api-v1-pv-meter-http"></a>
-#### Fronius Solar API V1 (PV meter/ HTTP)
+#### Fronius Solar API V1 (PV Meter/ HTTP)
 
 ```yaml
 - type: default
-  power: # pv power reading Fronius Solar API V1 GetPowerFlowRealtimeData.P_PV
-    type: http # use http plugin for pv power (P_PV)
+  power:
+    type: http
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
-    jq: if .Body.Data.Site.P_PV == null then 0 else .Body.Data.Site.P_PV end # parse GetPowerFlowRealtimeData P_PV response
+    jq: if .Body.Data.Site.P_PV == null then 0 else .Body.Data.Site.P_PV end
 ```
 
 <a id="meter-fronius-symo-gen24-plus-battery-meter"></a>
@@ -261,6 +277,28 @@ If you want to contribute configurations to this repository please open a Pull R
       value: 160:2:DCW # mpp 2 pv
 ```
 
+<a id="meter-generic-mqtt"></a>
+#### Generic (MQTT)
+
+```yaml
+- type: default
+  power: # power reading
+    type: mqtt # use mqtt plugin
+    topic: mbmd/sdm1-1/Power # mqtt topic
+    timeout: 10s # don't use older values
+```
+
+<a id="meter-generic-script"></a>
+#### Generic (Script)
+
+```yaml
+- type: default
+  power:
+    type: script # use script plugin
+    cmd: /bin/sh -c "echo 0" # actual command
+    timeout: 3s # kill script after 3 seconds
+```
+
 <a id="meter-generic-sunspec-3-phase-meter-via-inverter-grid-meter"></a>
 #### Generic SunSpec 3-phase meter via inverter (Grid Meter)
 
@@ -288,28 +326,6 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: modbus
   uri: 192.0.2.2:502
   id: 1
-```
-
-<a id="meter-generisch-mqtt"></a>
-#### Generisch (MQTT)
-
-```yaml
-- type: default
-  power: # power reading
-    type: mqtt # use mqtt plugin
-    topic: mbmd/sdm1-1/Power # mqtt topic
-    timeout: 10s # don't use older values
-```
-
-<a id="meter-generisch-script"></a>
-#### Generisch (Script)
-
-```yaml
-- type: default
-  power:
-    type: script # use script plugin
-    cmd: /bin/sh -c "echo 0" # actual command
-    timeout: 3s # kill script after 3 seconds
 ```
 
 <a id="meter-kostal-energy-meter-via-inverter-grid-meter"></a>
@@ -391,8 +407,8 @@ If you want to contribute configurations to this repository please open a Pull R
   uri: 192.0.2.2
 ```
 
-<a id="meter-sma-sunny-island--sunny-boy-storage"></a>
-#### SMA Sunny Island / Sunny Boy Storage
+<a id="meter-sma-sunny-island--sunny-boy-storage-battery-meter"></a>
+#### SMA Sunny Island / Sunny Boy Storage (Battery Meter)
 
 ```yaml
 - type: modbus
@@ -401,8 +417,8 @@ If you want to contribute configurations to this repository please open a Pull R
   soc: ChargeState
 ```
 
-<a id="meter-sma-sunnyboy--tripower--other-pv-inverter"></a>
-#### SMA SunnyBoy / TriPower / other PV-inverter
+<a id="meter-sma-sunnyboy--tripower--other-pv-inverter-pv-meter"></a>
+#### SMA SunnyBoy / TriPower / other PV-inverter (PV Meter)
 
 ```yaml
 - type: modbus
@@ -480,8 +496,8 @@ If you want to contribute configurations to this repository please open a Pull R
       decode: uint32s
 ```
 
-<a id="meter-sonnenbatterie-eco-10-battery-http"></a>
-#### Sonnenbatterie Eco/10 (Battery/ HTTP)
+<a id="meter-sonnenbatterie-eco-10-battery-meter-http"></a>
+#### Sonnenbatterie Eco/10 (Battery Meter/ HTTP)
 
 ```yaml
 - type: default
@@ -496,7 +512,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```
 
 <a id="meter-sonnenbatterie-eco-10-grid-meter-http"></a>
-#### Sonnenbatterie Eco/10 (Grid meter/ HTTP)
+#### Sonnenbatterie Eco/10 (Grid Meter/ HTTP)
 
 ```yaml
 - type: default
@@ -508,7 +524,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```
 
 <a id="meter-sonnenbatterie-eco-10-pv-meter-http"></a>
-#### Sonnenbatterie Eco/10 (PV meter/ HTTP)
+#### Sonnenbatterie Eco/10 (PV Meter/ HTTP)
 
 ```yaml
 - type: default
@@ -518,8 +534,8 @@ If you want to contribute configurations to this repository please open a Pull R
     jq: .Production_W
 ```
 
-<a id="meter-tesla-powerwall-battery"></a>
-#### Tesla Powerwall (Battery)
+<a id="meter-tesla-powerwall-battery-meter"></a>
+#### Tesla Powerwall (Battery Meter)
 
 ```yaml
 - type: tesla
@@ -528,7 +544,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```
 
 <a id="meter-tesla-powerwall-grid-meter"></a>
-#### Tesla Powerwall (Grid meter)
+#### Tesla Powerwall (Grid Meter)
 
 ```yaml
 - type: tesla
@@ -537,7 +553,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```
 
 <a id="meter-tesla-powerwall-pv-meter"></a>
-#### Tesla Powerwall (PV meter)
+#### Tesla Powerwall (PV Meter)
 
 ```yaml
 - type: tesla
@@ -590,16 +606,32 @@ If you want to contribute configurations to this repository please open a Pull R
 ### Chargers
 
 
+<a id="charger-evse-din-modbus-rtu"></a>
+#### EVSE DIN (Modbus RTU)
+
+```yaml
+- type: simpleevse
+  device: /dev/ttyUSB0 # serial RS485 interface
+```
+
+<a id="charger-evse-din-modbus-tcp"></a>
+#### EVSE DIN (Modbus/TCP)
+
+```yaml
+- type: simpleevse
+  uri: 192.0.2.2:502 # Modbus/TCP converter adress
+```
+
 <a id="charger-evse-wifi"></a>
-#### EVSE Wifi
+#### EVSE-Wifi
 
 ```yaml
 - type: evsewifi
-  uri: http://192.0.2.2 # SimpleEVSE-Wifi address
+  uri: http://192.0.2.2
 ```
 
-<a id="charger-generisch"></a>
-#### Generisch
+<a id="charger-generic"></a>
+#### Generic
 
 ```yaml
 - type: default
@@ -617,8 +649,8 @@ If you want to contribute configurations to this repository please open a Pull R
     # ...
 ```
 
-<a id="charger-generisch-mqtt"></a>
-#### Generisch (MQTT)
+<a id="charger-generic-mqtt"></a>
+#### Generic (MQTT)
 
 ```yaml
 - type: default
@@ -636,6 +668,14 @@ If you want to contribute configurations to this repository please open a Pull R
     cmd: /bin/sh -c "echo ${maxcurrent}"
 ```
 
+<a id="charger-go-echarger"></a>
+#### go-eCharger
+
+```yaml
+- type: go-e
+  uri: http://192.0.2.2 # go-e ip address (local)
+```
+
 <a id="charger-go-echarger-cloud"></a>
 #### go-eCharger (Cloud)
 
@@ -645,23 +685,15 @@ If you want to contribute configurations to this repository please open a Pull R
   cache: 10s # go-e cloud API cache duration
 ```
 
-<a id="charger-go-echarger-lokal"></a>
-#### go-eCharger (Lokal)
-
-```yaml
-- type: go-e
-  uri: http://192.0.2.2 # go-e ip address (local)
-```
-
-<a id="charger-i-charge-cion-modbus"></a>
-#### i-CHARGE CION (Modbus)
+<a id="charger-i-charge-cion-modbus-rtu-over-tcp"></a>
+#### i-CHARGE CION (Modbus RTU-over-TCP)
 
 ```yaml
 - type: default
   status:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1
     register: # manual register configuration
         address: 139 # CP-Status
@@ -670,7 +702,7 @@ If you want to contribute configurations to this repository please open a Pull R
   enabled:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1 
     register: # manual register configuration
       address: 100 # Zustand
@@ -679,7 +711,7 @@ If you want to contribute configurations to this repository please open a Pull R
   enable:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1
     register: # manual register configuration
       address: 100 # ein / aus
@@ -688,7 +720,7 @@ If you want to contribute configurations to this repository please open a Pull R
   maxcurrent:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1
     register: # manual register configuration
       address: 127 # Strom max
@@ -701,27 +733,27 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: keba
-  uri: 192.0.2.2 # KEBA ip address
+  uri: 192.0.2.2
   rfid:
     tag: 765765348 # RFID tag, see `evcc charger` to show tag
 ```
 
-<a id="charger-mobile-charger-connect"></a>
-#### Mobile Charger Connect
+<a id="charger-mobile-charger-connect-audi-bentley-porsche"></a>
+#### Mobile Charger Connect (Audi, Bentley, Porsche)
 
 ```yaml
 - type: mcc
-  uri: https://192.0.2.2 # Mobile Charger Connect address
+  uri: https://192.0.2.2
   password: # home user password
 ```
 
-<a id="charger-nrgkick-bluetooth"></a>
-#### NRGKick Bluetooth
+<a id="charger-nrgkick-bt-bluetooth"></a>
+#### NRGKick BT (Bluetooth)
 
 ```yaml
 - type: nrgkick-bluetooth
-  macaddress: 00:99:22 # MAC address
-  pin: # pin
+  macaddress: 00:99:22 # BT device MAC address
+  pin: # App PIN number (write protection)
 ```
 
 <a id="charger-nrgkick-connect"></a>
@@ -730,7 +762,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: nrgkick-connect
   uri: http://192.0.2.2
-  mac: 00:99:22 # MAC address
+  mac: 00:99:22 # BT device MAC address
   password: # password
 ```
 
@@ -743,40 +775,24 @@ If you want to contribute configurations to this repository please open a Pull R
   id: 1 # loadpoint id
 ```
 
-<a id="charger-phoenix-em-cp-controller-ethernet-modbus-tcp"></a>
-#### Phoenix EM-CP Controller (Ethernet/Modbus TCP)
+<a id="charger-phoenix-em-cp-controller-modbus-tcp"></a>
+#### Phoenix EM-CP Controller (Modbus/TCP)
 
 ```yaml
 - type: phoenix-emcp
-  uri: 192.0.2.2:502 # TCP ModBus address
-  id: 1 # slave id
+  uri: 192.0.2.2:502
+  id: 1
 ```
 
-<a id="charger-phoenix-ev-cc-controller-modbus"></a>
-#### Phoenix EV-CC Controller (Modbus)
+<a id="charger-phoenix-ev-cc-controller-modbus-rtu"></a>
+#### Phoenix EV-CC Controller (Modbus RTU)
 
 ```yaml
 - type: phoenix-evcc
   device: /dev/ttyUSB0
   baudrate: 9600
   comset: 8N1
-  id: 1 # slave id
-```
-
-<a id="charger-simple-evse-ethernet-modbus-tcp"></a>
-#### Simple EVSE (Ethernet/Modbus TCP)
-
-```yaml
-- type: simpleevse
-  uri: 192.0.2.2:502 # TCP ModBus address
-```
-
-<a id="charger-simple-evse-rs485"></a>
-#### Simple EVSE (RS485)
-
-```yaml
-- type: simpleevse
-  device: /dev/usb1 # RS485 ModBus device
+  id: 1
 ```
 
 <a id="charger-wallbe-eco-pro"></a>

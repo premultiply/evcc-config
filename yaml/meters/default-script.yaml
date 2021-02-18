@@ -1,5 +1,5 @@
 type: default
-name: Generisch (Script)
+name: Generic (Script)
 sample: |
   power:
     type: script # use script plugin

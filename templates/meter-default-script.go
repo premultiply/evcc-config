@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "Generisch (Script)",
+		Name:   "Generic (Script)",
 		Sample: `power:
   type: script # use script plugin
   cmd: /bin/sh -c "echo 0" # actual command

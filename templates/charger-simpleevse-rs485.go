@@ -8,8 +8,8 @@ func init() {
 	template := registry.Template{
 		Class:  "charger",
 		Type:   "simpleevse",
-		Name:   "Simple EVSE (RS485)",
-		Sample: `device: /dev/usb1 # RS485 ModBus device`,
+		Name:   "EVSE DIN (Modbus RTU)",
+		Sample: `device: /dev/ttyUSB0 # serial RS485 interface`,
 	}
 
 	registry.Add(template)

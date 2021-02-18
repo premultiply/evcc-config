@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "E3DC (Battery)",
+		Name:   "E3DC (Battery Meter)",
 		Sample: `power:
   type: modbus
   uri: e3dc.fritz.box:502

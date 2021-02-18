@@ -1,5 +1,5 @@
 type: modbus
-name: Eastron SDM Modbus RTU Meter
+name: Eastron SDM Modbus Meter (RTU)
 sample: |
   model: sdm
   device: /dev/ttyUSB0 # serial port

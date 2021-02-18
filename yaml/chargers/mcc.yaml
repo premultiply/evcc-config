@@ -1,5 +1,5 @@
-type: mcc # Mobile Charger Connect (Audi, Bentley, Porsche)
-name: Mobile Charger Connect
+type: mcc
+name: Mobile Charger Connect (Audi, Bentley, Porsche)
 sample: |
-  uri: https://192.0.2.2 # Mobile Charger Connect address
+  uri: https://192.0.2.2
   password: # home user password

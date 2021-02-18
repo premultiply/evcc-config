@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "charger",
 		Type:   "default",
-		Name:   "Generisch",
+		Name:   "Generic",
 		Sample: `status: # charger status A..F
   type: ...
   # ...
