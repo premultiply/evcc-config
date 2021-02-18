@@ -1,5 +1,5 @@
 type: default # Configurable charger
-name: Generisch
+name: Generic
 sample: |
   status: # charger status A..F
     type: ...

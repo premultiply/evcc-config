@@ -8,11 +8,16 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "default",
-		Name:   "Generic (MQTT)",
-		Sample: `power: # power reading
-  type: mqtt # use mqtt plugin
-  topic: mbmd/sdm1-1/Power # mqtt topic
-  timeout: 10s # don't use older values`,
+		Name:   "Solaredge (Grid Meter)",
+		Sample: `power:
+  type: modbus
+  uri: 192.0.2.2:502
+  id: 1
+  register:
+    address: 40207
+    type: holding
+    decode: int16
+  scale: -1`,
 	}
 
 	registry.Add(template)

@@ -1,5 +1,5 @@
 type: default
-name: Sonnenbatterie Eco/10 (Grid meter/ HTTP)
+name: Sonnenbatterie Eco/10 (Grid Meter/ HTTP)
 sample: |
   power: # power reading
     type: http # use http plugin

@@ -1,10 +1,10 @@
 type: default
-name: i-CHARGE CION (Modbus)
+name: i-CHARGE CION (Modbus RTU-over-TCP)
 sample: |
   status:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1
     register: # manual register configuration
         address: 139 # CP-Status
@@ -13,7 +13,7 @@ sample: |
   enabled:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1 
     register: # manual register configuration
       address: 100 # Zustand
@@ -22,7 +22,7 @@ sample: |
   enable:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1
     register: # manual register configuration
       address: 100 # ein / aus
@@ -31,7 +31,7 @@ sample: |
   maxcurrent:
     type: modbus
     uri: 192.0.2.2:502
-    rtu: true
+    rtu: true # Modbus over TCP
     id: 1
     register: # manual register configuration
       address: 127 # Strom max

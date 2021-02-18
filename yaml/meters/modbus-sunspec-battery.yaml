@@ -1,0 +1,6 @@
+type: modbus
+name: Generic SunSpec battery inverter (Battery Meter)
+sample: |
+  uri: 192.0.2.2:502
+  id: 1
+  soc: ChargeState

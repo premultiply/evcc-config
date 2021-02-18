@@ -1,5 +1,5 @@
 type: default # Configurable charger
-name: Generisch (Script)
+name: Generic (Script)
 sample: |
   title: Auto # display name for UI
   capacity: 50 # kWh

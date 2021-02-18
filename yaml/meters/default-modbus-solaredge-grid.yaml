@@ -1,0 +1,15 @@
+type: default
+name: Solaredge (Grid Meter)
+sample: |
+  power:
+    type: modbus
+    uri: 192.0.2.2:502
+    id: 1
+    register:
+      address: 40207
+      type: holding
+      decode: int16
+    scale: -1
+
+# Technical Note – SunSpec Logging in SolarEdge Inverters
+# https://www.solaredge.com/sites/default/files/sunspec-implementation-technical-note.pdf

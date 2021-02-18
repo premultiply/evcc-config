@@ -8,8 +8,8 @@ func init() {
 	template := registry.Template{
 		Class:  "charger",
 		Type:   "simpleevse",
-		Name:   "Simple EVSE (Ethernet/Modbus TCP)",
-		Sample: `uri: 192.0.2.2:502 # TCP ModBus address`,
+		Name:   "EVSE DIN (Modbus/TCP)",
+		Sample: `uri: 192.0.2.2:502 # Modbus/TCP converter adress`,
 	}
 
 	registry.Add(template)

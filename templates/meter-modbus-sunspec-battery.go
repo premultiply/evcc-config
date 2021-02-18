@@ -6,11 +6,12 @@ import (
 
 func init() {
 	template := registry.Template{
-		Class:  "charger",
-		Type:   "phoenix-emcp",
-		Name:   "Phoenix EM-CP Controller (Modbus/TCP)",
+		Class:  "meter",
+		Type:   "modbus",
+		Name:   "Generic SunSpec battery inverter (Battery Meter)",
 		Sample: `uri: 192.0.2.2:502
-id: 1`,
+id: 1
+soc: ChargeState`,
 	}
 
 	registry.Add(template)

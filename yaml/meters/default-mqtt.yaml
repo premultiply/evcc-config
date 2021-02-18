@@ -1,5 +1,5 @@
 type: default
-name: Generisch (MQTT)
+name: Generic (MQTT)
 sample: |
   power: # power reading
     type: mqtt # use mqtt plugin

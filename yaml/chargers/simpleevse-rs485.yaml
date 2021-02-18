@@ -1,4 +1,6 @@
-type: simpleevse # Charger with Phoenix Contact controller
-name: Simple EVSE (RS485)
+type: simpleevse
+name: EVSE DIN (Modbus RTU)
 sample: |
-  device: /dev/usb1 # RS485 ModBus device
+  device: /dev/ttyUSB0 # serial RS485 interface
+
+# http://evracing.cz/simple-evse-wallbox

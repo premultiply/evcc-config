@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "meter",
 		Type:   "tesla",
-		Name:   "Tesla Powerwall (Battery)",
+		Name:   "Tesla Powerwall (Battery Meter)",
 		Sample: `uri: http://192.0.2.2/
 usage: battery`,
 	}

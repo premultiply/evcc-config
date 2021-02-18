@@ -8,7 +8,7 @@ func init() {
 	template := registry.Template{
 		Class:  "charger",
 		Type:   "default",
-		Name:   "Generisch (MQTT)",
+		Name:   "Generic (MQTT)",
 		Sample: `status: # charger status A..F
   type: mqtt
   topic: some/topic1

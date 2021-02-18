@@ -1,0 +1,23 @@
+type: default
+name: SolarEdge StorEdge (Battery Meter)
+sample: |
+  power:
+    type: modbus
+    uri: 192.0.2.2:502
+    id: 1
+    register:
+      address: 62836
+      type: holding
+      decode: float32s
+    scale: -1
+  soc:
+    type: modbus
+    uri: 192.0.2.2:502
+    id: 1
+    register:
+      address: 62852
+      type: holding
+      decode: float32s
+
+# Technical Note – Power Control Protocol for SolarEdge Inverters
+# https://www.solaredge.com/sites/default/files/application_note_power_control_configuration.pdf 

@@ -1,4 +1,6 @@
-type: simpleevse # Charger with Phoenix Contact controller
-name: Simple EVSE (Ethernet/Modbus TCP)
+type: simpleevse
+name: EVSE DIN (Modbus/TCP)
 sample: |
-  uri: 192.0.2.2:502 # TCP ModBus address
+  uri: 192.0.2.2:502 # Modbus/TCP converter adress
+
+# http://evracing.cz/simple-evse-wallbox
