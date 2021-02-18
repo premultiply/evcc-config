@@ -60,6 +60,8 @@ If you want to contribute configurations to this repository please open a Pull R
 - [SMA Sunny Home Manager / Energy Meter (Speedwire)](#meter-sma-sunny-home-manager--energy-meter-speedwire)
 - [SMA Sunny Island / Sunny Boy Storage](#meter-sma-sunny-island--sunny-boy-storage)
 - [SMA SunnyBoy / TriPower / other PV-inverter](#meter-sma-sunnyboy--tripower--other-pv-inverter)
+- [Solaredge (Grid Meter)](#meter-solaredge-grid-meter)
+- [SolarEdge StorEdge (Battery Meter)](#meter-solaredge-storedge-battery-meter)
 - [Solarlog (Grid Meter)](#meter-solarlog-grid-meter)
 - [Solarlog (PV Meter)](#meter-solarlog-pv-meter)
 - [Sonnenbatterie Eco/10 (Battery/ HTTP)](#meter-sonnenbatterie-eco-10-battery-http)
@@ -285,7 +287,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: modbus
   uri: 192.0.2.2:502
-  id: 126
+  id: 1
 ```
 
 <a id="meter-generisch-mqtt"></a>
@@ -406,6 +408,46 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: modbus
   uri: 192.0.2.2:502
   id: 126
+```
+
+<a id="meter-solaredge-grid-meter"></a>
+#### Solaredge (Grid Meter)
+
+```yaml
+- type: default
+  power:
+    type: modbus
+    uri: 192.0.2.2:502
+    id: 1
+    register:
+      address: 40207
+      type: holding
+      decode: int16
+    scale: -1
+```
+
+<a id="meter-solaredge-storedge-battery-meter"></a>
+#### SolarEdge StorEdge (Battery Meter)
+
+```yaml
+- type: default
+  power:
+    type: modbus
+    uri: 192.0.2.2:502
+    id: 1
+    register:
+      address: 62836
+      type: holding
+      decode: float32s
+    scale: -1
+  soc:
+    type: modbus
+    uri: 192.0.2.2:502
+    id: 1
+    register:
+      address: 62852
+      type: holding
+      decode: float32s
 ```
 
 <a id="meter-solarlog-grid-meter"></a>
