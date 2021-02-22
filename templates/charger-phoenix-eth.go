@@ -7,12 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "charger",
-		Type:   "phoenix-evcc",
-		Name:   "Phoenix EV-CC Controller (Modbus RTU)",
-		Sample: `device: /dev/ttyUSB0
-baudrate: 9600
-comset: 8N1
-id: 1`,
+		Type:   "phoenix-eth",
+		Name:   "Phoenix ETH Controller (Modbus/TCP)",
+		Sample: `uri: 192.0.2.2:502
+id: 255 # Modbus id, may be 180 or 255 (default)`,
 	}
 
 	registry.Add(template)
