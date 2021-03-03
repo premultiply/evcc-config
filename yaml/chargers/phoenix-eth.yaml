@@ -1,5 +1,0 @@
-type: phoenix-eth
-name: Phoenix ETH Controller (Modbus/TCP)
-sample: |
-  uri: 192.0.2.2:502
-  id: 255 # Modbus id, may be 180 or 255 (default)

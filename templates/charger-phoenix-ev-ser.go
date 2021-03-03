@@ -7,8 +7,8 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "charger",
-		Type:   "phoenix-ser",
-		Name:   "Phoenix SER Controller (Modbus RTU)",
+		Type:   "phoenix-ev-ser",
+		Name:   "Phoenix EV-SER Controller (Modbus RTU)",
 		Sample: `device: /dev/ttyUSB0
 baudrate: 9600 # configurable (S2/DIP 1)
 comset: 8N1

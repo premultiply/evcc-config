@@ -1,5 +1,5 @@
-type: phoenix-ser
-name: Phoenix SER Controller (Modbus RTU)
+type: phoenix-ev-ser
+name: Phoenix EV-SER Controller (Modbus RTU)
 sample: |
   device: /dev/ttyUSB0
   baudrate: 9600 # configurable (S2/DIP 1)

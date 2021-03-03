@@ -29,8 +29,9 @@ If you want to contribute configurations to this repository please open a Pull R
 - [NRGKick BT (Bluetooth)](#charger-nrgkick-bt-bluetooth)
 - [NRGKick Connect](#charger-nrgkick-connect)
 - [openWB (MQTT)](#charger-openwb-mqtt)
-- [Phoenix ETH Controller (Modbus/TCP)](#charger-phoenix-eth-controller-modbus-tcp)
-- [Phoenix SER Controller (Modbus RTU)](#charger-phoenix-ser-controller-modbus-rtu)
+- [Phoenix EM-CP-PP-ETH Controller (Modbus/TCP)](#charger-phoenix-em-cp-pp-eth-controller-modbus-tcp)
+- [Phoenix EV-ETH Controller (Modbus/TCP)](#charger-phoenix-ev-eth-controller-modbus-tcp)
+- [Phoenix EV-SER Controller (Modbus RTU)](#charger-phoenix-ev-ser-controller-modbus-rtu)
 - [Wallbe (Eco, Pro)](#charger-wallbe-eco-pro)
 - [Wallbe (pre 2019 EV-CC-AC1 controller)](#charger-wallbe-pre-2019-ev-cc-ac1-controller)
 
@@ -777,20 +778,33 @@ If you want to contribute configurations to this repository please open a Pull R
   id: 1 # loadpoint id
 ```
 
-<a id="charger-phoenix-eth-controller-modbus-tcp"></a>
-#### Phoenix ETH Controller (Modbus/TCP)
+<a id="charger-phoenix-em-cp-pp-eth-controller-modbus-tcp"></a>
+#### Phoenix EM-CP-PP-ETH Controller (Modbus/TCP)
 
 ```yaml
-- type: phoenix-eth
-  uri: 192.0.2.2:502
-  id: 255 # Modbus id, may be 180 or 255 (default)
+- type: phoenix-em-eth
+  uri: 192.168.0.8:502
+  power: true    # charge meter connected to controller
+  energy: true   # charge meter connected to controller
+  currents: true # charge meter connected to controller
 ```
 
-<a id="charger-phoenix-ser-controller-modbus-rtu"></a>
-#### Phoenix SER Controller (Modbus RTU)
+<a id="charger-phoenix-ev-eth-controller-modbus-tcp"></a>
+#### Phoenix EV-ETH Controller (Modbus/TCP)
 
 ```yaml
-- type: phoenix-ser
+- type: phoenix-ev-eth
+  uri: 192.168.0.8:502
+  power: true    # charge meter connected to controller
+  energy: true   # charge meter connected to controller
+  currents: true # charge meter connected to controller
+```
+
+<a id="charger-phoenix-ev-ser-controller-modbus-rtu"></a>
+#### Phoenix EV-SER Controller (Modbus RTU)
+
+```yaml
+- type: phoenix-ev-ser
   device: /dev/ttyUSB0
   baudrate: 9600 # configurable (S2/DIP 1)
   comset: 8N1
