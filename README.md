@@ -57,6 +57,7 @@ If you want to contribute configurations to this repository please open a Pull R
 - [Generic SunSpec battery inverter (Battery Meter)](#meter-generic-sunspec-battery-inverter-battery-meter)
 - [Generic SunSpec PV inverter (PV Meter)](#meter-generic-sunspec-pv-inverter-pv-meter)
 - [Kostal Energy Meter via inverter (Grid Meter)](#meter-kostal-energy-meter-via-inverter-grid-meter)
+- [Kostal Hybrid Inverter (Battery Meter)](#meter-kostal-hybrid-inverter-battery-meter)
 - [Kostal Inverter (PV Meter)](#meter-kostal-inverter-pv-meter)
 - [Kostal Smart Energy Meter (Grid Meter)](#meter-kostal-smart-energy-meter-grid-meter)
 - [Multiple DC MPP strings combined (PV Meter)](#meter-multiple-dc-mpp-strings-combined-pv-meter)
@@ -348,6 +349,17 @@ If you want to contribute configurations to this repository please open a Pull R
       address: 252 # (see ba_kostal_interface_modbus-tcp_sunspec.pdf)
       type: holding
       decode: float32s # swapped float encoding
+```
+
+<a id="meter-kostal-hybrid-inverter-battery-meter"></a>
+#### Kostal Hybrid Inverter (Battery Meter)
+
+```yaml
+- type: modbus
+  uri: 192.0.2.2:1502
+  id: 71
+  power: 802:W
+  soc: 802:SoC
 ```
 
 <a id="meter-kostal-inverter-pv-meter"></a>

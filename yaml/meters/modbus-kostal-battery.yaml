@@ -1,0 +1,7 @@
+type: modbus
+name: Kostal Hybrid Inverter (Battery Meter)
+sample: |
+  uri: 192.0.2.2:1502
+  id: 71
+  power: 802:W
+  soc: 802:SoC
