@@ -262,9 +262,9 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  model: 213 # sunspec meter
   uri: 192.0.2.2:502
   id: 200
+  power: 213:W # sunspec meter
 ```
 
 <a id="meter-fronius-symo-gen24-plus-pv-meter"></a>
@@ -314,9 +314,9 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
-  model: 203 # sunspec meter
   uri: 192.0.2.2:502
   id: 1
+  power: 203:W # sunspec meter
 ```
 
 <a id="meter-generic-sunspec-battery-inverter-battery-meter"></a>
@@ -454,10 +454,10 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: default
   power:
     type: modbus
-    uri: 192.0.2.2:502
+    uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:
-      address: 40207
+      address: 40206 # Meter 1 Total Real Power (sum of active phases)
       type: holding
       decode: int16
     scale: -1
@@ -473,14 +473,14 @@ If you want to contribute configurations to this repository please open a Pull R
     add:
     - type: modbus
       model: sunspec
-      uri: 192.0.2.2:502
+      uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
       id: 1
       value: 103:DCW
     - type: modbus
-      uri: 192.0.2.2:502
+      uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
       id: 1
       register:
-        address: 62836
+        address: 62836 # Battery 1 Instantaneous Power
         type: holding
         decode: float32s
 ```
@@ -492,19 +492,19 @@ If you want to contribute configurations to this repository please open a Pull R
 - type: default
   power:
     type: modbus
-    uri: 192.0.2.2:502
+    uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:
-      address: 62836
+      address: 62836 # Battery 1 Instantaneous Power
       type: holding
       decode: float32s
     scale: -1
   soc:
     type: modbus
-    uri: 192.0.2.2:502
+    uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:
-      address: 62852
+      address: 62852 # Battery 1 State of Energy (SOE)
       type: holding
       decode: float32s
 ```
