@@ -63,6 +63,7 @@ If you want to contribute configurations to this repository please open a Pull R
 - [Kostal Smart Energy Meter (Grid Meter)](#meter-kostal-smart-energy-meter-grid-meter)
 - [Multiple DC MPP strings combined (PV Meter)](#meter-multiple-dc-mpp-strings-combined-pv-meter)
 - [Multiple PV inverters combined (PV Meter)](#meter-multiple-pv-inverters-combined-pv-meter)
+- [SMA SHM or EM via inverter (Grid Meter)](#meter-sma-shm-or-em-via-inverter-grid-meter)
 - [SMA Sunny Home Manager / Energy Meter (Speedwire)](#meter-sma-sunny-home-manager--energy-meter-speedwire)
 - [SMA Sunny Island / Sunny Boy Storage (Battery Meter)](#meter-sma-sunny-island--sunny-boy-storage-battery-meter)
 - [SMA SunnyBoy / TriPower / other PV-inverter (PV Meter)](#meter-sma-sunnyboy--tripower--other-pv-inverter-pv-meter)
@@ -418,6 +419,31 @@ If you want to contribute configurations to this repository please open a Pull R
       model: sunspec
       uri: 192.0.2.3:502
       id: 1
+```
+
+<a id="meter-sma-shm-or-em-via-inverter-grid-meter"></a>
+#### SMA SHM or EM via inverter (Grid Meter)
+
+```yaml
+- type: default
+  power:
+    type: calc
+    add:
+    - type: modbus
+      uri: 192.0.2.2:502
+      id: 3
+      register: # manual non-sunspec register configuration
+        address: 30865 # SMA Modbus Profile: Power grid reference
+        type: holding
+        decode: int32
+    - type: modbus
+      uri: 192.0.2.2:502
+      id: 3
+      register: # manual non-sunspec register configuration
+        address: 30867 # SMA Modbus Profile: Power grid feed-in
+        type: holding
+        decode: int32
+      scale: -1
 ```
 
 <a id="meter-sma-sunny-home-manager--energy-meter-speedwire"></a>

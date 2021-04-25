@@ -1,0 +1,21 @@
+type: default
+name: SMA SHM or EM via inverter (Grid Meter)
+sample: |
+  power:
+    type: calc
+    add:
+    - type: modbus
+      uri: 192.0.2.2:502
+      id: 3
+      register: # manual non-sunspec register configuration
+        address: 30865 # SMA Modbus Profile: Power grid reference
+        type: holding
+        decode: int32
+    - type: modbus
+      uri: 192.0.2.2:502
+      id: 3
+      register: # manual non-sunspec register configuration
+        address: 30867 # SMA Modbus Profile: Power grid feed-in
+        type: holding
+        decode: int32
+      scale: -1
