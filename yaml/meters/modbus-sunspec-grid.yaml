@@ -5,3 +5,4 @@ sample: |
   uri: 192.0.2.2:502
   id: 1
   power: 203:W # sunspec meter
+  
