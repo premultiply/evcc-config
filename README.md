@@ -262,6 +262,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
+  model: sunspec
   uri: 192.0.2.2:502
   id: 200
   power: 213:W # sunspec meter
@@ -314,6 +315,7 @@ If you want to contribute configurations to this repository please open a Pull R
 
 ```yaml
 - type: modbus
+  model: sunspec
   uri: 192.0.2.2:502
   id: 1
   power: 203:W # sunspec meter

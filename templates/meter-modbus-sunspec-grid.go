@@ -9,7 +9,8 @@ func init() {
 		Class:  "meter",
 		Type:   "modbus",
 		Name:   "Generic SunSpec 3-phase meter via inverter (Grid Meter)",
-		Sample: `uri: 192.0.2.2:502
+		Sample: `model: sunspec
+uri: 192.0.2.2:502
 id: 1
 power: 203:W # sunspec meter`,
 	}
