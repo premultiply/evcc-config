@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "Kostal Energy Meter via inverter (Grid Meter)",
 		Sample: `power:
-  type: modbus # use ModBus plugin
+  plugin: modbus # use ModBus plugin
   uri: 192.0.2.2:1502 # inverter port
   id: 71
   register: # manual non-sunspec register configuration

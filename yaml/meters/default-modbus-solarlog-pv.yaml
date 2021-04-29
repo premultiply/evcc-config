@@ -1,8 +1,8 @@
-type: default
+type: custom
 name: Solarlog (PV Meter)
 sample: |
   power:
-    type: modbus
+    plugin: modbus
     uri: 192.0.2.2:502 # IP address of the SolarLog  device and ModBus port address
     id: 1
     register:

@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "E3DC (Battery Meter)",
 		Sample: `power:
-  type: modbus
+  plugin: modbus
   uri: e3dc.fritz.box:502
   id: 1 # ModBus slave id
   register: # manual register configuration
@@ -19,7 +19,7 @@ func init() {
     decode: int32s
   scale: -1 # reverse direction
 soc:
-  type: modbus
+  plugin: modbus
   uri: e3dc.fritz.box:502
   id: 1 # ModBus slave id
   register: # manual register configuration

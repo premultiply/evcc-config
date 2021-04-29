@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "vzlogger (HTTP)",
 		Sample: `power: # power reading
-  type: http # use http plugin
+  plugin: http # use http plugin
   uri: http://demo.volkszaehler.org/api/data/<uuid>.json?from=now
   jq: .data.tuples[0][1] # parse response json`,
 	}

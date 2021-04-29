@@ -1,8 +1,8 @@
-type: default
+type: custom
 name: Kostal Energy Meter via inverter (Grid Meter)
 sample: |
   power:
-    type: modbus # use ModBus plugin
+    plugin: modbus # use ModBus plugin
     uri: 192.0.2.2:1502 # inverter port
     id: 71
     register: # manual non-sunspec register configuration

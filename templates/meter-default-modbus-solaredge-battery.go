@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "SolarEdge StorEdge (Battery Meter)",
 		Sample: `power:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
   id: 1
   register:
@@ -19,7 +19,7 @@ func init() {
     decode: float32s
   scale: -1
 soc:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
   id: 1
   register:

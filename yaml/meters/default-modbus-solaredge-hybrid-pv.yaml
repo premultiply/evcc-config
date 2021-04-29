@@ -1,15 +1,15 @@
-type: default
+type: custom
 name: SolarEdge Hybrid Inverter (PV Meter)
 sample: |
   power:
-    type: calc
+    plugin: calc
     add:
-    - type: modbus
+    - plugin: modbus
       model: sunspec
       uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
       id: 1
       value: 103:DCW
-    - type: modbus
+    - plugin: modbus
       uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
       id: 1
       register:

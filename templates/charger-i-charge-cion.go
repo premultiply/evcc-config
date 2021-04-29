@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "charger",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "i-CHARGE CION (Modbus RTU-over-TCP)",
 		Sample: `status:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502
   rtu: true # Modbus over TCP
   id: 1
@@ -19,7 +19,7 @@ func init() {
       type: holding
       decode: uint16
 enabled:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502
   rtu: true # Modbus over TCP
   id: 1 
@@ -28,7 +28,7 @@ enabled:
     type: holding
     decode: uint16
 enable:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502
   rtu: true # Modbus over TCP
   id: 1
@@ -37,7 +37,7 @@ enable:
     type: writesingle
     decode: uint16
 maxcurrent:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502
   rtu: true # Modbus over TCP
   id: 1

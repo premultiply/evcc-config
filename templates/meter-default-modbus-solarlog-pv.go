@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "Solarlog (PV Meter)",
 		Sample: `power:
-  type: modbus
+  plugin: modbus
   uri: 192.0.2.2:502 # IP address of the SolarLog  device and ModBus port address
   id: 1
   register:

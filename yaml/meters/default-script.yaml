@@ -1,7 +1,7 @@
-type: default
+type: custom
 name: Generic (Script)
 sample: |
   power:
-    type: script # use script plugin
+    plugin: script # use script plugin
     cmd: /bin/sh -c "echo 0" # actual command
     timeout: 3s # kill script after 3 seconds

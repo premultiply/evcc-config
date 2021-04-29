@@ -7,10 +7,10 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "default",
+		Type:   "custom",
 		Name:   "Generic (Script)",
 		Sample: `power:
-  type: script # use script plugin
+  plugin: script # use script plugin
   cmd: /bin/sh -c "echo 0" # actual command
   timeout: 3s # kill script after 3 seconds`,
 	}

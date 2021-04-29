@@ -1,8 +1,8 @@
-type: default
+type: custom
 name: i-CHARGE CION (Modbus RTU-over-TCP)
 sample: |
   status:
-    type: modbus
+    plugin: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1
@@ -11,7 +11,7 @@ sample: |
         type: holding
         decode: uint16
   enabled:
-    type: modbus
+    plugin: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1 
@@ -20,7 +20,7 @@ sample: |
       type: holding
       decode: uint16
   enable:
-    type: modbus
+    plugin: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1
@@ -29,7 +29,7 @@ sample: |
       type: writesingle
       decode: uint16
   maxcurrent:
-    type: modbus
+    plugin: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1

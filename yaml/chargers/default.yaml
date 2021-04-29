@@ -1,4 +1,4 @@
-type: default # Configurable charger
+type: custom # Configurable charger
 name: Generic
 sample: |
   status: # charger status A..F

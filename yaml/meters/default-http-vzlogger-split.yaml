@@ -1,8 +1,8 @@
-type: default
+type: custom
 name: vzlogger (split import/export channels)
 sample: |
   power:
-    type: calc # use calc plugin
+    plugin: calc # use calc plugin
     add:
     - type: http # import channel
       uri: http://demo.volkszaehler.org/api/data/<import-uuid>.json?from=now

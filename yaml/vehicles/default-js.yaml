@@ -1,4 +1,4 @@
-type: default # Configurable charger
+type: custom # Configurable charger
 name: Generic EV without SoC (Javascript)
 sample: |
   title: My electric vehicle # display name for UI
