@@ -427,7 +427,7 @@ If you want to contribute configurations to this repository please open a Pull R
 #### SMA Sunny Home Manager / Energy Meter (Speedwire)
 
 ```yaml
-- type: sma
+- type: speedwire
   uri: 192.0.2.2
 ```
 
@@ -639,10 +639,10 @@ If you want to contribute configurations to this repository please open a Pull R
   power:
     plugin: calc # use calc plugin
     add:
-    - type: http # import channel
+    - plugin: http # import channel
       uri: http://demo.volkszaehler.org/api/data/<import-uuid>.json?from=now
       jq: .data.tuples[0][1] # parse response json
-    - type: http # export channel
+    - plugin: http # export channel
       uri: http://demo.volkszaehler.org/api/data/<export-uuid>.json?from=now
       jq: .data.tuples[0][1] # parse response json
       scale: -1 # export must result in negative values
