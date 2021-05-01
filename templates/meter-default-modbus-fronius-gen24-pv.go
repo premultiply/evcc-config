@@ -12,12 +12,12 @@ func init() {
 		Sample: `power:
   plugin: calc
   add:
-  - type: modbus
+  - plugin: modbus
     model: sunspec
     uri: 192.0.2.2:502
     id: 1
     value: 160:1:DCW # mpp 1 pv
-  - type: modbus
+  - plugin: modbus
     model: sunspec
     uri: 192.0.2.2:502
     id: 1

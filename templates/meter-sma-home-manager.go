@@ -7,7 +7,7 @@ import (
 func init() {
 	template := registry.Template{
 		Class:  "meter",
-		Type:   "speedwire",
+		Type:   "sma",
 		Name:   "SMA Sunny Home Manager / Energy Meter (Speedwire)",
 		Sample: `uri: 192.0.2.2`,
 	}

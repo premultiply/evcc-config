@@ -12,7 +12,7 @@ func init() {
 		Sample: `title: My electric vehicle # display name for UI
 capacity: 10 # kWh
 charge:
-  type: js
+  plugin: js
   script: 95 // vehicle SoC in %`,
 	}
 

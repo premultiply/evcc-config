@@ -12,7 +12,7 @@ func init() {
 		Sample: `title: Mein Auto # display name for UI
 capacity: 50 # kWh
 charge:
-  type: ...
+  plugin: ...
   # ...`,
 	}
 

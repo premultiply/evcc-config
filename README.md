@@ -239,13 +239,13 @@ If you want to contribute configurations to this repository please open a Pull R
   power:
     plugin: calc
     add:
-    - type: modbus
+    - plugin: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
       value: 160:3:DCW # mppt 3 charge
       scale: -1
-    - type: modbus
+    - plugin: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
@@ -277,12 +277,12 @@ If you want to contribute configurations to this repository please open a Pull R
   power:
     plugin: calc
     add:
-    - type: modbus
+    - plugin: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
       value: 160:1:DCW # mpp 1 pv
-    - type: modbus
+    - plugin: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
@@ -427,7 +427,7 @@ If you want to contribute configurations to this repository please open a Pull R
 #### SMA Sunny Home Manager / Energy Meter (Speedwire)
 
 ```yaml
-- type: speedwire
+- type: sma
   uri: 192.0.2.2
 ```
 
@@ -964,7 +964,7 @@ If you want to contribute configurations to this repository please open a Pull R
   title: Mein Auto # display name for UI
   capacity: 50 # kWh
   charge:
-    type: ...
+    plugin: ...
     # ...
 ```
 
@@ -990,7 +990,7 @@ If you want to contribute configurations to this repository please open a Pull R
   title: My electric vehicle # display name for UI
   capacity: 10 # kWh
   charge:
-    type: js
+    plugin: js
     script: 95 // vehicle SoC in %
 ```
 
