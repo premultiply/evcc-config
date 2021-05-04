@@ -121,7 +121,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: e3dc.fritz.box:502
     id: 1 # ModBus slave id
     register: # manual register configuration
@@ -130,7 +130,7 @@ If you want to contribute configurations to this repository please open a Pull R
       decode: int32s
     scale: -1 # reverse direction
   soc:
-    plugin: modbus
+    source: modbus
     uri: e3dc.fritz.box:502
     id: 1 # ModBus slave id
     register: # manual register configuration
@@ -145,7 +145,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: e3dc.fritz.box:502
     id: 1 # ModBus slave id
     register: # manual register configuration
@@ -160,7 +160,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: e3dc.fritz.box:502
     id: 1 # ModBus slave id
     register: # manual register configuration
@@ -200,11 +200,11 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: http
+    source: http
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
     jq: if .Body.Data.Site.P_Akku == null then 0 else .Body.Data.Site.P_Akku end
   soc:
-    plugin: http
+    source: http
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
     jq: .Body.Data.Inverters."1".SOC
 ```
@@ -215,7 +215,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: http
+    source: http
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
     jq: if .Body.Data.Site.P_Grid == null then 0 else .Body.Data.Site.P_Grid end
 ```
@@ -226,7 +226,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: http
+    source: http
     uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
     jq: if .Body.Data.Site.P_PV == null then 0 else .Body.Data.Site.P_PV end
 ```
@@ -237,21 +237,21 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: calc
+    source: calc
     add:
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
       value: 160:3:DCW # mppt 3 charge
       scale: -1
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
       value: 160:4:DCW # mppt 4 discharge
   soc:
-    plugin: modbus
+    source: modbus
     model: sunspec
     uri: 192.0.2.2:502
     id: 1
@@ -275,14 +275,14 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: calc
+    source: calc
     add:
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
       value: 160:1:DCW # mpp 1 pv
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
@@ -295,7 +295,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power: # power reading
-    plugin: mqtt # use mqtt plugin
+    source: mqtt # use mqtt plugin
     topic: mbmd/sdm1-1/Power # mqtt topic
     timeout: 10s # don't use older values
 ```
@@ -306,7 +306,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: script # use script plugin
+    source: script # use script plugin
     cmd: /bin/sh -c "echo 0" # actual command
     timeout: 3s # kill script after 3 seconds
 ```
@@ -347,7 +347,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus # use ModBus plugin
+    source: modbus # use ModBus plugin
     uri: 192.0.2.2:1502 # inverter port
     id: 71
     register: # manual non-sunspec register configuration
@@ -391,14 +391,14 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: calc
+    source: calc
     add:
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       value: 160:1:DCW # SunSpec Model 160 MPP string 1 DCW
       uri: 192.0.2.2:502
       id: 1
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       value: 160:2:DCW # SunSpec Model 160 MPP string 2 DCW
       uri: 192.0.2.2:502
@@ -411,13 +411,13 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: calc
+    source: calc
     add:
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.2:502
       id: 1
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.3:502
       id: 1
@@ -456,7 +456,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:
@@ -472,14 +472,14 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: calc
+    source: calc
     add:
-    - plugin: modbus
+    - source: modbus
       model: sunspec
       uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
       id: 1
       value: 103:DCW
-    - plugin: modbus
+    - source: modbus
       uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
       id: 1
       register:
@@ -494,7 +494,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:
@@ -503,7 +503,7 @@ If you want to contribute configurations to this repository please open a Pull R
       decode: float32s
     scale: -1
   soc:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:
@@ -518,7 +518,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502 # IP address of the SolarLog device and ModBus port address
     id: 1
     register:
@@ -533,7 +533,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502 # IP address of the SolarLog  device and ModBus port address
     id: 1
     register:
@@ -548,11 +548,11 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: http
+    source: http
     uri: http://192.0.2.2:8080/api/v1/status
     jq: .Pac_total_W
   soc:
-    plugin: http
+    source: http
     uri: http://192.0.2.2:8080/api/v1/status
     jq: .USOC
 ```
@@ -563,7 +563,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: http
+    source: http
     uri: http://192.0.2.2:8080/api/v1/status
     jq: .GridFeedIn_W
     scale: -1 # reverse direction
@@ -575,7 +575,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: http
+    source: http
     uri: http://192.0.2.2:8080/api/v1/status
     jq: .Production_W
 ```
@@ -613,7 +613,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power: # power reading
-    plugin: http # use http plugin
+    source: http # use http plugin
     uri: http://demo.volkszaehler.org/api/data/<uuid>.json?from=now
     jq: .data.tuples[0][1] # parse response json
 ```
@@ -624,7 +624,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: ws # use websocket plugin
+    source: ws # use websocket plugin
     uri: ws://192.0.2.2:8082/socket
     jq: .data | select(.uuid=="<uuid>") .tuples[0][1] # parse response json
     timeout: 30s
@@ -637,12 +637,12 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   power:
-    plugin: calc # use calc plugin
+    source: calc # use calc plugin
     add:
-    - plugin: http # import channel
+    - source: http # import channel
       uri: http://demo.volkszaehler.org/api/data/<import-uuid>.json?from=now
       jq: .data.tuples[0][1] # parse response json
-    - plugin: http # export channel
+    - source: http # export channel
       uri: http://demo.volkszaehler.org/api/data/<export-uuid>.json?from=now
       jq: .data.tuples[0][1] # parse response json
       scale: -1 # export must result in negative values
@@ -694,16 +694,16 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   status: # charger status A..F
-    plugin: ...
+    source: ...
     # ...
   enabled: # charger enabled state (true/false or 0/1)
-    plugin: ...
+    source: ...
     # ...
   enable: # set charger enabled state
-    plugin: ...
+    source: ...
     # ...
   maxcurrent: # set charger max current
-    plugin: ...
+    source: ...
     # ...
 ```
 
@@ -713,16 +713,16 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   status: # charger status A..F
-    plugin: mqtt
+    source: mqtt
     topic: some/topic1
   enabled: # charger enabled state (true/false or 0/1)
-    plugin: mqtt
+    source: mqtt
     topic: some/topic2
   enable: # set charger enabled state
-    plugin: script
+    source: script
     cmd: /bin/sh -c "echo ${enable}"
   maxcurrent: # set charger max current
-    plugin: script
+    source: script
     cmd: /bin/sh -c "echo ${maxcurrent}"
 ```
 
@@ -749,7 +749,7 @@ If you want to contribute configurations to this repository please open a Pull R
 ```yaml
 - type: custom
   status:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1
@@ -758,7 +758,7 @@ If you want to contribute configurations to this repository please open a Pull R
         type: holding
         decode: uint16
   enabled:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1 
@@ -767,7 +767,7 @@ If you want to contribute configurations to this repository please open a Pull R
       type: holding
       decode: uint16
   enable:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1
@@ -776,7 +776,7 @@ If you want to contribute configurations to this repository please open a Pull R
       type: writesingle
       decode: uint16
   maxcurrent:
-    plugin: modbus
+    source: modbus
     uri: 192.0.2.2:502
     rtu: true # Modbus over TCP
     id: 1
@@ -964,7 +964,7 @@ If you want to contribute configurations to this repository please open a Pull R
   title: Mein Auto # display name for UI
   capacity: 50 # kWh
   charge:
-    plugin: ...
+    source: ...
     # ...
 ```
 
@@ -976,7 +976,7 @@ If you want to contribute configurations to this repository please open a Pull R
   title: Auto # display name for UI
   capacity: 50 # kWh
   charge:
-    plugin: script # use script plugin
+    source: script # use script plugin
     cmd: /bin/sh -c "echo 50" # actual command
     timeout: 3s # kill script after 3 seconds
   cache: 5m # cache duration
@@ -990,7 +990,7 @@ If you want to contribute configurations to this repository please open a Pull R
   title: My electric vehicle # display name for UI
   capacity: 10 # kWh
   charge:
-    plugin: js
+    source: js
     script: 95 // vehicle SoC in %
 ```
 

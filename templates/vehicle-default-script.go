@@ -12,7 +12,7 @@ func init() {
 		Sample: `title: Auto # display name for UI
 capacity: 50 # kWh
 charge:
-  plugin: script # use script plugin
+  source: script # use script plugin
   cmd: /bin/sh -c "echo 50" # actual command
   timeout: 3s # kill script after 3 seconds
 cache: 5m # cache duration`,

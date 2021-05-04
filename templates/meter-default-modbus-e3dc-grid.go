@@ -10,7 +10,7 @@ func init() {
 		Type:   "custom",
 		Name:   "E3DC (Grid Meter)",
 		Sample: `power:
-  plugin: modbus
+  source: modbus
   uri: e3dc.fritz.box:502
   id: 1 # ModBus slave id
   register: # manual register configuration

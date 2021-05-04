@@ -2,6 +2,6 @@ type: custom
 name: vzlogger (HTTP)
 sample: |
   power: # power reading
-    plugin: http # use http plugin
+    source: http # use http plugin
     uri: http://demo.volkszaehler.org/api/data/<uuid>.json?from=now
     jq: .data.tuples[0][1] # parse response json

@@ -10,7 +10,7 @@ func init() {
 		Type:   "custom",
 		Name:   "vzlogger (Push Server/ Websocket)",
 		Sample: `power:
-  plugin: ws # use websocket plugin
+  source: ws # use websocket plugin
   uri: ws://192.0.2.2:8082/socket
   jq: .data | select(.uuid=="<uuid>") .tuples[0][1] # parse response json
   timeout: 30s

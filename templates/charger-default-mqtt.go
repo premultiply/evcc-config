@@ -10,16 +10,16 @@ func init() {
 		Type:   "custom",
 		Name:   "Generic (MQTT)",
 		Sample: `status: # charger status A..F
-  plugin: mqtt
+  source: mqtt
   topic: some/topic1
 enabled: # charger enabled state (true/false or 0/1)
-  plugin: mqtt
+  source: mqtt
   topic: some/topic2
 enable: # set charger enabled state
-  plugin: script
+  source: script
   cmd: /bin/sh -c "echo ${enable}"
 maxcurrent: # set charger max current
-  plugin: script
+  source: script
   cmd: /bin/sh -c "echo ${maxcurrent}"`,
 	}
 

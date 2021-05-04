@@ -10,11 +10,11 @@ func init() {
 		Type:   "custom",
 		Name:   "Fronius Solar API V1 (Battery Meter/ HTTP)",
 		Sample: `power:
-  plugin: http
+  source: http
   uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
   jq: if .Body.Data.Site.P_Akku == null then 0 else .Body.Data.Site.P_Akku end
 soc:
-  plugin: http
+  source: http
   uri: http://192.0.2.2/solar_api/v1/GetPowerFlowRealtimeData.fcgi
   jq: .Body.Data.Inverters."1".SOC`,
 	}

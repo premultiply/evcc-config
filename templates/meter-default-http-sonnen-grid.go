@@ -10,7 +10,7 @@ func init() {
 		Type:   "custom",
 		Name:   "Sonnenbatterie Eco/10 (Grid Meter/ HTTP)",
 		Sample: `power:
-  plugin: http
+  source: http
   uri: http://192.0.2.2:8080/api/v1/status
   jq: .GridFeedIn_W
   scale: -1 # reverse direction`,

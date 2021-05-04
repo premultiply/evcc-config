@@ -10,14 +10,14 @@ func init() {
 		Type:   "custom",
 		Name:   "SolarEdge Hybrid Inverter (PV Meter)",
 		Sample: `power:
-  plugin: calc
+  source: calc
   add:
-  - plugin: modbus
+  - source: modbus
     model: sunspec
     uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     value: 103:DCW
-  - plugin: modbus
+  - source: modbus
     uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
     id: 1
     register:

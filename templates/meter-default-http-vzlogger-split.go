@@ -10,12 +10,12 @@ func init() {
 		Type:   "custom",
 		Name:   "vzlogger (split import/export channels)",
 		Sample: `power:
-  plugin: calc # use calc plugin
+  source: calc # use calc plugin
   add:
-  - plugin: http # import channel
+  - source: http # import channel
     uri: http://demo.volkszaehler.org/api/data/<import-uuid>.json?from=now
     jq: .data.tuples[0][1] # parse response json
-  - plugin: http # export channel
+  - source: http # export channel
     uri: http://demo.volkszaehler.org/api/data/<export-uuid>.json?from=now
     jq: .data.tuples[0][1] # parse response json
     scale: -1 # export must result in negative values`,

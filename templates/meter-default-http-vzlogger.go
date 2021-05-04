@@ -10,7 +10,7 @@ func init() {
 		Type:   "custom",
 		Name:   "vzlogger (HTTP)",
 		Sample: `power: # power reading
-  plugin: http # use http plugin
+  source: http # use http plugin
   uri: http://demo.volkszaehler.org/api/data/<uuid>.json?from=now
   jq: .data.tuples[0][1] # parse response json`,
 	}

@@ -10,7 +10,7 @@ func init() {
 		Type:   "custom",
 		Name:   "E3DC (Battery Meter)",
 		Sample: `power:
-  plugin: modbus
+  source: modbus
   uri: e3dc.fritz.box:502
   id: 1 # ModBus slave id
   register: # manual register configuration
@@ -19,7 +19,7 @@ func init() {
     decode: int32s
   scale: -1 # reverse direction
 soc:
-  plugin: modbus
+  source: modbus
   uri: e3dc.fritz.box:502
   id: 1 # ModBus slave id
   register: # manual register configuration

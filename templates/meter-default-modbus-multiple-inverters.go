@@ -10,13 +10,13 @@ func init() {
 		Type:   "custom",
 		Name:   "Multiple PV inverters combined (PV Meter)",
 		Sample: `power:
-  plugin: calc
+  source: calc
   add:
-  - plugin: modbus
+  - source: modbus
     model: sunspec
     uri: 192.0.2.2:502
     id: 1
-  - plugin: modbus
+  - source: modbus
     model: sunspec
     uri: 192.0.2.3:502
     id: 1`,

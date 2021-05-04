@@ -10,7 +10,7 @@ func init() {
 		Type:   "custom",
 		Name:   "SolarEdge StorEdge (Battery Meter)",
 		Sample: `power:
-  plugin: modbus
+  source: modbus
   uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
   id: 1
   register:
@@ -19,7 +19,7 @@ func init() {
     decode: float32s
   scale: -1
 soc:
-  plugin: modbus
+  source: modbus
   uri: 192.0.2.2:502 # Port 502 (SetApp) or 1502 (LCD)
   id: 1
   register:

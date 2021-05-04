@@ -2,7 +2,7 @@ type: custom
 name: E3DC (Grid Meter)
 sample: |
   power:
-    plugin: modbus
+    source: modbus
     uri: e3dc.fritz.box:502
     id: 1 # ModBus slave id
     register: # manual register configuration

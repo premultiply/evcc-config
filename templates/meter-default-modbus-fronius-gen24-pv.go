@@ -10,14 +10,14 @@ func init() {
 		Type:   "custom",
 		Name:   "Fronius Symo GEN24 Plus (PV Meter)",
 		Sample: `power:
-  plugin: calc
+  source: calc
   add:
-  - plugin: modbus
+  - source: modbus
     model: sunspec
     uri: 192.0.2.2:502
     id: 1
     value: 160:1:DCW # mpp 1 pv
-  - plugin: modbus
+  - source: modbus
     model: sunspec
     uri: 192.0.2.2:502
     id: 1

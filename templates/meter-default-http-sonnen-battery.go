@@ -10,11 +10,11 @@ func init() {
 		Type:   "custom",
 		Name:   "Sonnenbatterie Eco/10 (Battery Meter/ HTTP)",
 		Sample: `power:
-  plugin: http
+  source: http
   uri: http://192.0.2.2:8080/api/v1/status
   jq: .Pac_total_W
 soc:
-  plugin: http
+  source: http
   uri: http://192.0.2.2:8080/api/v1/status
   jq: .USOC`,
 	}
